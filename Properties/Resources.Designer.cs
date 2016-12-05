@@ -73,6 +73,16 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deleteicon {
+            get {
+                object obj = ResourceManager.GetObject("deleteicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap marcsrv_logo_white {
             get {
                 object obj = ResourceManager.GetObject("marcsrv_logo_white", resourceCulture);
@@ -106,6 +116,16 @@ namespace NitadoMAI.Properties {
         internal static System.Drawing.Bitmap squares {
             get {
                 object obj = ResourceManager.GetObject("squares", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap squaresloading {
+            get {
+                object obj = ResourceManager.GetObject("squaresloading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
