@@ -20,9 +20,14 @@ namespace NitadoMAI
             InitializeComponent();
         }
 
-        private void login_Load(object sender, EventArgs e)
+        public class Variables
         {
-            webbro.Navigate(new Uri("https://oauth.nitrado.net/oauth/v2/auth?client_id=<CLIENTID>&scope=service%20user_info%20service_order&redirect_uri=https://nitradomai.marcsrv.de/empty.html&&response_type=code"));
+            public static string clientid = "<CLIENTID>";
+            public static string secretid = "<SECRETID>";
+        }
+            private void login_Load(object sender, EventArgs e)
+        {
+            webbro.Navigate(new Uri("https://oauth.nitrado.net/oauth/v2/auth?client_id=" + Variables.clientid + "&scope=service%20user_info%20service_order&redirect_uri=https://nitradomai.marcsrv.de/empty.html&&response_type=code"));
             webbro.DocumentCompleted +=
             new WebBrowserDocumentCompletedEventHandler(webloaded);
         }
@@ -62,7 +67,7 @@ namespace NitadoMAI
         {
             string UrlRequest = "https://oauth.nitrado.net/oauth/v2/token?grant_type=authorization_code&code=" +
                                  authtoken +
-                                 "&redirect_uri=https://nitradomai.marcsrv.de/empty.html&%20client_id=<CLIENTID>%20client_secret=<CLIENTSECRET>";
+                                 "&redirect_uri=https://nitradomai.marcsrv.de/empty.html&%20client_id=" + Variables.clientid + "&%20client_secret=" + Variables.secretid;
 
             
             var request = WebRequest.Create(UrlRequest);
