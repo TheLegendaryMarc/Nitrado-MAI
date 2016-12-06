@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace NitadoMAI
 {
@@ -21,7 +22,9 @@ namespace NitadoMAI
         {
             labelupdateworker.Text = "Aktualisiere Gamedatenbank...";
             labelupdateworker.Image = Properties.Resources.squares;
-            System.IO.File.WriteAllText(Application.StartupPath + "/gamedb.txt", main.nitrapi("get", "gameserver/games"));
+            string gamedb = main.nitrapi("get", "gameserver/games");
+            System.IO.File.WriteAllText(Application.CommonAppDataPath + @"\gamedb.txt", gamedb);
+            
         }
 
         private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

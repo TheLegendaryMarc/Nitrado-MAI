@@ -220,7 +220,7 @@ namespace NitadoMAI
                                 break;
                         }
                         
-                        dynamic gamedb = JsonConvert.DeserializeObject(System.IO.File.ReadAllText(Application.StartupPath + "/gamedb.txt"));
+                        dynamic gamedb = JsonConvert.DeserializeObject(System.IO.File.ReadAllText(Application.CommonAppDataPath + "/gamedb.txt"));
                         //gamedb.data.games.location
                             foreach (var location in gamedb.data.games.locations)
                         {
