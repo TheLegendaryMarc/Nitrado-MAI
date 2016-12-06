@@ -48,5 +48,19 @@ namespace NitadoMAI
             MessageBox.Show("Account aus Client entfernt [Programm Neustart erforderlich]");
             Application.Exit();
         }
+
+        public void button1_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
+            
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            update updatefrom = new update();
+            updatefrom.ShowDialog();
+        }
     }
 }

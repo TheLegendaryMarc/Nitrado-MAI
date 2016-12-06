@@ -38,7 +38,8 @@ namespace NitadoMAI
                 makeaccessrequest(authtoken);
 
 
-                
+                update updateform = new update();
+                updateform.ShowDialog();
                 this.Close();
             }
 
@@ -61,7 +62,7 @@ namespace NitadoMAI
         {
             string UrlRequest = "https://oauth.nitrado.net/oauth/v2/token?grant_type=authorization_code&code=" +
                                  authtoken +
-                                 "&redirect_uri=https://nitradomai.marcsrv.de/empty.html&%20client_id=<CLIENT>%20client_secret=<CLIENTSECRET>";
+                                 "&redirect_uri=https://nitradomai.marcsrv.de/empty.html&%20client_id=<CLIENTID>%20client_secret=<CLIENTSECRET>";
 
             
             var request = WebRequest.Create(UrlRequest);

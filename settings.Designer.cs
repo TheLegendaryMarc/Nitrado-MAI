@@ -53,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.labelcodename = new System.Windows.Forms.Label();
             this.labelversion = new System.Windows.Forms.Label();
             this.labelprogramm = new System.Windows.Forms.Label();
@@ -61,7 +62,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnsavesettings = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -159,6 +161,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox7);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.checkBox6);
             this.groupBox2.Controls.Add(this.checkBox5);
             this.groupBox2.Controls.Add(this.checkBox4);
@@ -325,6 +329,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Info";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 125);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(124, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Icons: http://icons8.com";
+            // 
             // labelcodename
             // 
             this.labelcodename.AutoSize = true;
@@ -399,14 +412,26 @@
             this.button2.Text = "Abbrechen";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // button1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 125);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(124, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Icons: http://icons8.com";
+            this.button1.Location = new System.Drawing.Point(6, 219);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(262, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Gamedatenbank aktualisieren";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Enabled = false;
+            this.checkBox7.Location = new System.Drawing.Point(7, 167);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(159, 17);
+            this.checkBox7.TabIndex = 7;
+            this.checkBox7.Text = "Automatische Aktualisierung";
+            this.checkBox7.UseVisualStyleBackColor = true;
             // 
             // settings
             // 
@@ -475,5 +500,7 @@
         private System.Windows.Forms.Button btnsavesettings;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox7;
     }
 }

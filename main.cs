@@ -36,7 +36,7 @@ namespace NitadoMAI
             public static string serviceid;
             public static string servicetype;
             public static dynamic dataresponse;
-            
+
 
         }
 
@@ -46,13 +46,13 @@ namespace NitadoMAI
             if (Properties.Settings.Default.accesstoken == "")
             {
                 login frm = new login();
-                frm.ShowDialog(); 
+                frm.ShowDialog();
 
             }
-            
+
             btnrefresh.PerformClick();
         }
-       
+
 
         private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -128,27 +128,27 @@ namespace NitadoMAI
                 labelworker.Text = "Abgeschlossen";
                 labelworker.Image = Properties.Resources.successicon;
             }
-           
 
-           
-            
+
+
+
         }
 
-        
+
 
 
         //API ADAPTER
 
-        public static string nitrapi(string method,string uri)
+        public static string nitrapi(string method, string uri)
         {
-            string jsonesponse  = "0";
-            
+            string jsonesponse = "0";
+
 
             string UrlRequest = "https://api.nitrado.net/" + uri;
-                var request = WebRequest.Create(UrlRequest);
-                request.ContentType = "application/json; charset=utf-8";
-                request.Headers.Add("Authorization: " + Properties.Settings.Default.accesstoken);
-                request.Method = method;
+            var request = WebRequest.Create(UrlRequest);
+            request.ContentType = "application/json; charset=utf-8";
+            request.Headers.Add("Authorization: " + Properties.Settings.Default.accesstoken);
+            request.Method = method;
 
             try
             {
@@ -157,14 +157,14 @@ namespace NitadoMAI
                 {
                     jsonesponse = sr.ReadToEnd();
                 }
-                
+
             }
-            catch(WebException e)
+            catch (WebException e)
             {
                 string errorjson = "0";
                 if (e.Response == null)
                 {
-                    
+
                     jsonesponse = "{\"status\":\"error\",\"message\":\"Keine Internetverbindung!\"}";
                 }
                 else
@@ -176,25 +176,26 @@ namespace NitadoMAI
                     dynamic errorresponse = JsonConvert.DeserializeObject(errorjson);
 
                     jsonesponse = errorjson;
+                    Variables.dataresponse = errorjson;
                 }
             }
-            
-            
+
+
             //dynamic dataresponse = JsonConvert.DeserializeObject(jsonesponse);
-            
+
             return jsonesponse;
 
-            
+
         }
         //Nutzerdaten holen
         public string getuserdata()
         {
-            
+
             dynamic dataresponse = JsonConvert.DeserializeObject(nitrapi("get", "user"));
             if (dataresponse.status == "success")
             {
 
-                
+
                 Variables.userid = dataresponse.data.user.user_id;
                 Variables.username = dataresponse.data.user.username;
                 Variables.email = dataresponse.data.user.email;
@@ -205,11 +206,12 @@ namespace NitadoMAI
                 Variables.avtarurl = dataresponse.data.user.avatar;
                 Variables.name = dataresponse.data.user.profile.name;
                 Variables.currency = dataresponse.data.user.currency;
-            }else
+            }
+            else
             {
                 labelworker.Text = "Fehler: [" + dataresponse.status + "] " + dataresponse.message;
                 labelworker.Image = Properties.Resources.deleteicon;
-                
+
             }
 
             return null;
@@ -217,12 +219,12 @@ namespace NitadoMAI
 
         }
 
-       
+
 
 
         private void btnrefresh_Click(object sender, EventArgs e)
         {
-            
+
             //mainworker.DoWork += new DoWorkEventHandler(workerdata_DoWork);
             mainworker.RunWorkerAsync();
 
@@ -245,14 +247,14 @@ namespace NitadoMAI
             //work User Data
             labelworker.Text = "Lädt Accountdaten...";
 
-            
+
 
 
 
 
             getuserdata();
 
-           
+
 
             //work Services
 
@@ -268,5 +270,12 @@ namespace NitadoMAI
             Form serviceview = new serviceview();
             serviceview.Show();
         }
+        
+        
+
+        
+       
+
+        
     }
 }
