@@ -39,6 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -62,8 +64,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnsavesettings = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -176,6 +176,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Allgemein";
             // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Enabled = false;
+            this.checkBox7.Location = new System.Drawing.Point(7, 167);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(159, 17);
+            this.checkBox7.TabIndex = 7;
+            this.checkBox7.Text = "Automatische Aktualisierung";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 219);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(262, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Gamedatenbank aktualisieren";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
@@ -264,6 +285,7 @@
             this.btnlogout.Size = new System.Drawing.Size(75, 23);
             this.btnlogout.TabIndex = 3;
             this.btnlogout.Text = "Logout";
+            this.btnlogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnlogout.UseVisualStyleBackColor = true;
             this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
@@ -401,6 +423,7 @@
             this.btnsavesettings.TabIndex = 6;
             this.btnsavesettings.Text = "Speichern";
             this.btnsavesettings.UseVisualStyleBackColor = true;
+            this.btnsavesettings.Click += new System.EventHandler(this.btnsavesettings_Click);
             // 
             // button2
             // 
@@ -411,27 +434,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Abbrechen";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 219);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(262, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Gamedatenbank aktualisieren";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Enabled = false;
-            this.checkBox7.Location = new System.Drawing.Point(7, 167);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(159, 17);
-            this.checkBox7.TabIndex = 7;
-            this.checkBox7.Text = "Automatische Aktualisierung";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // settings
             // 

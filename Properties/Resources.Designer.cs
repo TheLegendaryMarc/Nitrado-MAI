@@ -63,6 +63,16 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _404gif {
+            get {
+                object obj = ResourceManager.GetObject("404gif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Appssessionlogouticon {
             get {
                 object obj = ResourceManager.GetObject("Appssessionlogouticon", resourceCulture);
@@ -106,6 +116,26 @@ namespace NitadoMAI.Properties {
         internal static System.Drawing.Bitmap nitradologo {
             get {
                 object obj = ResourceManager.GetObject("nitradologo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plusicon {
+            get {
+                object obj = ResourceManager.GetObject("plusicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap servericon {
+            get {
+                object obj = ResourceManager.GetObject("servericon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

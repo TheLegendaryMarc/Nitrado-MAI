@@ -149,7 +149,7 @@ namespace NitadoMAI
             request.ContentType = "application/json; charset=utf-8";
             request.Headers.Add("Authorization: " + Properties.Settings.Default.accesstoken);
             request.Method = method;
-
+            
             try
             {
                 var response = (HttpWebResponse)request.GetResponse();
@@ -157,6 +157,8 @@ namespace NitadoMAI
                 {
                     jsonesponse = sr.ReadToEnd();
                 }
+                
+                
 
             }
             catch (WebException e)
@@ -166,6 +168,7 @@ namespace NitadoMAI
                 {
 
                     jsonesponse = "{\"status\":\"error\",\"message\":\"Keine Internetverbindung!\"}";
+                    Variables.dataresponse = jsonesponse;
                 }
                 else
                 {
@@ -270,12 +273,18 @@ namespace NitadoMAI
             Form serviceview = new serviceview();
             serviceview.Show();
         }
-        
-        
 
-        
-       
+        private void btncharge_Click(object sender, EventArgs e)
+        {
+            payment paymentform = new payment();
+            paymentform.ShowDialog();
+                
+        }
 
-        
+        private void btnorderservice_Click(object sender, EventArgs e)
+        {
+            order orderform = new order();
+            orderform.ShowDialog();
+        }
     }
 }

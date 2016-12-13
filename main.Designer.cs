@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Gameserver", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Voiceserver", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Webspace", System.Windows.Forms.HorizontalAlignment.Left);
@@ -37,6 +36,7 @@
             System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("CMS", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Bouncer", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("Clanpage", System.Windows.Forms.HorizontalAlignment.Left);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.mainworker = new System.ComponentModel.BackgroundWorker();
             this.tardis = new System.Windows.Forms.Timer(this.components);
             this.statusstrip = new System.Windows.Forms.StatusStrip();
@@ -46,13 +46,15 @@
             this.labelrealname = new System.Windows.Forms.Label();
             this.labeluserid = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btncharge = new System.Windows.Forms.Button();
             this.btnsettings = new System.Windows.Forms.Button();
             this.labelcredit = new System.Windows.Forms.Label();
             this.labelregistered = new System.Windows.Forms.Label();
-            this.picavatar = new System.Windows.Forms.PictureBox();
             this.listservices = new System.Windows.Forms.ListView();
             this.serviceiconlist = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.btnorderservice = new System.Windows.Forms.Button();
+            this.picavatar = new System.Windows.Forms.PictureBox();
             this.statusstrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picavatar)).BeginInit();
@@ -120,6 +122,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btncharge);
             this.groupBox1.Controls.Add(this.btnsettings);
             this.groupBox1.Controls.Add(this.labelcredit);
             this.groupBox1.Controls.Add(this.btnrefresh);
@@ -134,6 +137,16 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account";
+            // 
+            // btncharge
+            // 
+            this.btncharge.Location = new System.Drawing.Point(176, 118);
+            this.btncharge.Name = "btncharge";
+            this.btncharge.Size = new System.Drawing.Size(117, 23);
+            this.btncharge.TabIndex = 12;
+            this.btncharge.Text = "Guthaben aufladen";
+            this.btncharge.UseVisualStyleBackColor = true;
+            this.btncharge.Click += new System.EventHandler(this.btncharge_Click);
             // 
             // btnsettings
             // 
@@ -163,17 +176,6 @@
             this.labelregistered.Size = new System.Drawing.Size(120, 16);
             this.labelregistered.TabIndex = 8;
             this.labelregistered.Text = "%REGISTERED%";
-            // 
-            // picavatar
-            // 
-            this.picavatar.ErrorImage = global::NitadoMAI.Properties.Resources.unknownuser;
-            this.picavatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picavatar.InitialImage")));
-            this.picavatar.Location = new System.Drawing.Point(13, 16);
-            this.picavatar.Name = "picavatar";
-            this.picavatar.Size = new System.Drawing.Size(150, 150);
-            this.picavatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picavatar.TabIndex = 4;
-            this.picavatar.TabStop = false;
             // 
             // listservices
             // 
@@ -227,12 +229,36 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Services";
             // 
+            // btnorderservice
+            // 
+            this.btnorderservice.Image = global::NitadoMAI.Properties.Resources.plusicon;
+            this.btnorderservice.Location = new System.Drawing.Point(783, 192);
+            this.btnorderservice.Name = "btnorderservice";
+            this.btnorderservice.Size = new System.Drawing.Size(125, 32);
+            this.btnorderservice.TabIndex = 13;
+            this.btnorderservice.Text = "Service bestellen";
+            this.btnorderservice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnorderservice.UseVisualStyleBackColor = true;
+            this.btnorderservice.Click += new System.EventHandler(this.btnorderservice_Click);
+            // 
+            // picavatar
+            // 
+            this.picavatar.ErrorImage = global::NitadoMAI.Properties.Resources.unknownuser;
+            this.picavatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picavatar.InitialImage")));
+            this.picavatar.Location = new System.Drawing.Point(13, 16);
+            this.picavatar.Name = "picavatar";
+            this.picavatar.Size = new System.Drawing.Size(150, 150);
+            this.picavatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picavatar.TabIndex = 4;
+            this.picavatar.TabStop = false;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(926, 588);
+            this.Controls.Add(this.btnorderservice);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listservices);
             this.Controls.Add(this.groupBox1);
@@ -271,6 +297,8 @@
         private System.Windows.Forms.ListView listservices;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ImageList serviceiconlist;
+        private System.Windows.Forms.Button btncharge;
+        private System.Windows.Forms.Button btnorderservice;
     }
 }
 

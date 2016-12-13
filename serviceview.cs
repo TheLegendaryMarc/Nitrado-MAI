@@ -113,19 +113,28 @@ namespace NitadoMAI
                         Variables.servertype = dataresponse.data.service.type;
                         Variables.server_human = dataresponse.data.service.type_human;
                         Variables.gamekey = dataresponse.data.service.details.folder_short;
-                        labelworkerstatus.Text = "Lädt Gameserverdaten...";
-                        dynamic srvresponse = JsonConvert.DeserializeObject(main.nitrapi("get", "services/" + labelservice.Text + "/gameservers"));
-                        Variables.srvresponse = srvresponse;
-                        Variables.gamestatus = srvresponse.data.gameserver.status;
-                        Variables.ip = srvresponse.data.gameserver.ip;
-                        Variables.port = srvresponse.data.gameserver.port;
-                        Variables.gamegame = srvresponse.data.gameserver.game;
-                        Variables.ip = srvresponse.data.gameserver.ip;
-                        Variables.gamehuman = srvresponse.data.gameserver.game_human;
                         Variables.servercreated = dataresponse.data.service.start_date;
                         Variables.serversuspending = dataresponse.data.service.suspend_date;
                         Variables.serverdelete = dataresponse.data.service.delete_date;
-                        Variables.gameslots = srvresponse.data.gameserver.slots;
+                        labelworkerstatus.Text = "Lädt Gameserverdaten...";
+                        dynamic srvresponse = JsonConvert.DeserializeObject(main.nitrapi("get", "services/" + labelservice.Text + "/gameservers"));
+                        if (srvresponse.status == "success")
+                        {
+                            Variables.srvresponse = srvresponse;
+                            Variables.gamestatus = srvresponse.data.gameserver.status;
+                            Variables.ip = srvresponse.data.gameserver.ip;
+                            Variables.port = srvresponse.data.gameserver.port;
+                            Variables.gamegame = srvresponse.data.gameserver.game;
+                            Variables.ip = srvresponse.data.gameserver.ip;
+                            Variables.gamehuman = srvresponse.data.gameserver.game_human;
+
+                            Variables.gameslots = srvresponse.data.gameserver.slots;
+                        }
+                        else
+                        {
+                            labelworkerstatus.Text = "Fehler: [" + srvresponse.status + "] " + srvresponse.message;
+                            labelworkerstatus.Image = Properties.Resources.deleteicon;
+                        }
                         break;
                         
                 }
@@ -138,14 +147,71 @@ namespace NitadoMAI
         private void worker_RunWorkerCompleted_1(object sender, RunWorkerCompletedEventArgs e)
         {
 
-
-            if (Variables.srvresponse.status == "error")
+            dynamic tmpjson = JsonConvert.DeserializeObject(main.Variables.dataresponse);
+            if (tmpjson.status == "error")
             {
-                labelworkerstatus.Text = "Fehler: [" + Variables.srvresponse.status + "] " + Variables.srvresponse.message;
+                labelworkerstatus.Text = "Fehler: [" + tmpjson.status + "] " + tmpjson.message;
                 labelworkerstatus.Image = Properties.Resources.deleteicon;
+                labelgameserver.Text = "Gameserver";
+                labelip.Text = "Unknow";
+                labelgamestatus.Text = "Unknow";
+
+                try
+                {
+                    labelgamesuspendtime.Text = Variables.serversuspending.ToString("dd.MM.yyyy H:mm");
+
+
+
+                    switch (Variables.serverstatus)
+                    {
+                        case "active":
+                            labelservicestatus.Text = "Aktiv";
+                            labelservicestatus.BackColor = Color.Green;
+                            break;
+                        case "installing":
+                            labelservicestatus.Text = "wird installiert";
+                            labelservicestatus.BackColor = Color.Orange;
+                            break;
+                        case "suspended":
+                            labelservicestatus.Text = "Abgelaufen";
+                            labelservicestatus.BackColor = Color.Red;
+                            break;
+                        case "adminlocked":
+                            labelservicestatus.Text = "Adminlock aktiv, bitte Support kontaktieren";
+                            labelservicestatus.BackColor = Color.Red;
+                            break;
+                        case "adminlocked_suspended":
+                            labelservicestatus.Text = "Adminlock aktiv und abgelaufen";
+                            labelservicestatus.BackColor = Color.Red;
+                            break;
+                    }
+
+                    dynamic gamedb = JsonConvert.DeserializeObject(System.IO.File.ReadAllText(Application.CommonAppDataPath + "/gamedb.txt"));
+                    //gamedb.data.games.location
+                    foreach (var location in gamedb.data.games.locations)
+                    {
+                        if (location.id == Variables.location)
+                        {
+                            labellocation.Text = location.country + ", " + location.city;
+                        }
+                    }
+                    foreach (var game in gamedb.data.games.games)
+                    {
+                        if (game.folder_short == Variables.gamekey)
+                        {
+                            labelgame.Text = game.name;
+                        }
+                    }
+                    labelgamestarttime.Text = Variables.servercreated.ToString("dd.MM.yyyy H:mm");
+                    serverimage.ImageLocation = "https://static.nitrado.net/cdn/gameicons/120/" + Variables.gamekey + ".jpg";
+
+                }catch{
+                    
+                }
             }
             else
             {
+
                 switch (labelservicetype.Text)
                 {
                     case "Gameserver":
@@ -195,8 +261,18 @@ namespace NitadoMAI
                                 break;
 
                         }
-                        labelgamesuspendtime.Text = Variables.serversuspending.ToString("dd.MM.yyyy H:mm");
-                        switch (Variables.serverstatus)
+                        break;
+                    
+                        
+
+                }
+            
+            
+            labelgamesuspendtime.Text = Variables.serversuspending.ToString("dd.MM.yyyy H:mm");
+            
+
+
+                    switch (Variables.serverstatus)
                         {
                             case "active":
                                 labelservicestatus.Text = "Aktiv";
@@ -229,21 +305,29 @@ namespace NitadoMAI
                                 labellocation.Text = location.country + ", " + location.city;
                             }
                         }
-                            labelgamestarttime.Text = Variables.servercreated.ToString("dd.MM.yyyy H:mm");
+                    foreach (var game in gamedb.data.games.games)
+                    {
+                        if (game.folder_short == Variables.gamekey)
+                        {
+                            labelgame.Text = game.name;
+                        }
+                    }
+                    labelgamestarttime.Text = Variables.servercreated.ToString("dd.MM.yyyy H:mm");
                         serverimage.ImageLocation = "https://static.nitrado.net/cdn/gameicons/120/" + Variables.gamekey + ".jpg";
+                    
 
-                        break;
-                }
+                        
+                
 
 
                 labelworkerstatus.Text = "Abgeschlossen";
                 labelworkerstatus.Image = Properties.Resources.successicon;
             }
-           
-            
-        }
 
-        private void tabmaster_SelectedIndexChanged(object sender, EventArgs e)
+    }
+
+
+    private void tabmaster_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(tabmaster.SelectedIndex != Variables.indexint)
             {
@@ -257,7 +341,7 @@ namespace NitadoMAI
             if(labelnextupdate.Text == "0")
             {
                 worker.RunWorkerAsync();
-                labelnextupdate.Text = "60";
+                labelnextupdate.Text = btntimerstartstop.Tag.ToString();
                 
             }else {
                 int nextint = Convert.ToInt32(labelnextupdate.Text);
@@ -276,10 +360,49 @@ namespace NitadoMAI
                 btntimerstartstop.Text = "Automatische Aktualisierung - ON";
             }else if(timermaschine.Tag.ToString() == "started")
             {
+                labelnextupdate.Text = btntimerstartstop.Tag.ToString();
                 timermaschine.Stop();
                 timermaschine.Tag = "stopped";
                 btntimerstartstop.Text = "Automatische Aktualisierung - OFF";
             }
+        }
+        public string updatenextupdatetime(int seconds)
+        {
+            labelnextupdate.Text = seconds.ToString();
+            btntimerstartstop.Tag = seconds.ToString();
+            timermaschine.Start();
+            timermaschine.Tag = "started";
+            btntimerstartstop.Text = "Automatische Aktualisierung - ON";
+            return null;
+        }
+        private void sekundenunstableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updatenextupdatetime(10);
+        }
+
+        private void sekundenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updatenextupdatetime(30);
+        }
+
+        private void sekundenToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            updatenextupdatetime(60);
+        }
+
+        private void sekundenToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            updatenextupdatetime(90);
+        }
+
+        private void minutenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updatenextupdatetime(120);
+        }
+
+        private void minutenToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            updatenextupdatetime(300);
         }
     }
 }

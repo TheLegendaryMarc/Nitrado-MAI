@@ -62,5 +62,15 @@ namespace NitadoMAI
             update updatefrom = new update();
             updatefrom.ShowDialog();
         }
+
+        private void btnsavesettings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
