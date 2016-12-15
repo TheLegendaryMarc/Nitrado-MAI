@@ -38,7 +38,7 @@ namespace NitadoMAI
             labelprogramm.Text = Application.ProductName;
             labelversion.Text = Application.ProductVersion;
             labelcodename.Text = "Return";
-            txtaccesstoken.Text = Properties.Settings.Default.accesstoken;
+            txtaccesstoken.Text = login.Decrypt(Properties.Settings.Default.accesstoken, "<PASSPHRASE>");
         }
 
         private void btnlogout_Click(object sender, EventArgs e)

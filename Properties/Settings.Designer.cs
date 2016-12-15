@@ -46,5 +46,17 @@ namespace NitadoMAI.Properties {
                 this["username"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dumpsetting {
+            get {
+                return ((string)(this["dumpsetting"]));
+            }
+            set {
+                this["dumpsetting"] = value;
+            }
+        }
     }
 }

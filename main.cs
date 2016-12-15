@@ -147,7 +147,7 @@ namespace NitadoMAI
             string UrlRequest = "https://api.nitrado.net/" + uri;
             var request = WebRequest.Create(UrlRequest);
             request.ContentType = "application/json; charset=utf-8";
-            request.Headers.Add("Authorization: " + Properties.Settings.Default.accesstoken);
+            request.Headers.Add("Authorization: " + login.Decrypt(Properties.Settings.Default.accesstoken, "<PASSPHRASE>"));
             request.Method = method;
             
             try
