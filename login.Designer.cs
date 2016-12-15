@@ -58,6 +58,9 @@
             this.webbro.Size = new System.Drawing.Size(467, 639);
             this.webbro.TabIndex = 0;
             this.webbro.Url = new System.Uri("", System.UriKind.Relative);
+            this.webbro.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webbro_DocumentCompleted);
+            this.webbro.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webbro_Navigated);
+            this.webbro.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.webbro_Navigating);
             // 
             // label3
             // 

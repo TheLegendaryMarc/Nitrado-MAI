@@ -28,14 +28,14 @@ namespace NitadoMAI
         }
             private void login_Load(object sender, EventArgs e)
         {
-            webbro.Navigate(new Uri("https://oauth.nitrado.net/oauth/v2/auth?client_id=" + Variables.clientid + "&scope=service%20user_info%20service_order&redirect_uri=https://nitradomai.marcsrv.de/empty.html&&response_type=code"));
+            webbro.Navigate(new Uri("https://oauth.nitrado.net/oauth/v2/auth?client_id=" + Variables.clientid + "&scope=service%20user_info%20service_order&redirect_uri=https://server.nitrado.net/deu/gameserver-mieten&&response_type=code"));
             webbro.DocumentCompleted +=
             new WebBrowserDocumentCompletedEventHandler(webloaded);
         }
 
         private void webloaded(object sender,WebBrowserDocumentCompletedEventArgs e)
         {
-
+            /*
             if (webbro.Url.ToString().Contains("https://nitradomai.marcsrv.de/empty.html?code=") == true)
             {
                 string url = webbro.Url.ToString();
@@ -48,6 +48,7 @@ namespace NitadoMAI
                 updateform.ShowDialog();
                 this.Close();
             }
+            */
 
             
             
@@ -68,7 +69,7 @@ namespace NitadoMAI
         {
             string UrlRequest = "https://oauth.nitrado.net/oauth/v2/token?grant_type=authorization_code&code=" +
                                  authtoken +
-                                 "&redirect_uri=https://nitradomai.marcsrv.de/empty.html&%20client_id=" + Variables.clientid + "&%20client_secret=" + Variables.secretid;
+                                 "&redirect_uri=https://server.nitrado.net/deu/gameserver-mieten&%20client_id=" + Variables.clientid + "&%20client_secret=" + Variables.secretid;
 
             
             var request = WebRequest.Create(UrlRequest);
@@ -186,6 +187,32 @@ namespace NitadoMAI
                 rngCsp.GetBytes(randomBytes);
             }
             return randomBytes;
+        }
+
+        private void webbro_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+           
+        }
+
+        private void webbro_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+           // MessageBox.Show("Diese URL wurde geladen: " + webbro.Url.ToString());
+        }
+
+        private void webbro_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            if (webbro.Url.ToString().Contains("https://server.nitrado.net/deu/gameserver-mieten?code=") == true)
+            {
+                string url = webbro.Url.ToString();
+                string authtoken = url.Replace("https://server.nitrado.net/deu/gameserver-mieten?code=", "");
+
+                makeaccessrequest(authtoken);
+
+
+                update updateform = new update();
+                updateform.ShowDialog();
+                this.Close();
+            }
         }
     }
 }
