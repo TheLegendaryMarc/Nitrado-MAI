@@ -31,6 +31,8 @@ namespace NitadoMAI
 
         private void settings_Load(object sender, EventArgs e)
         {
+            DateTime expiretext = Properties.Settings.Default.expires;
+            labelexpire.Text = expiretext.ToString("dd.MM.yyyy H:mm:ss");
             labelname.Text = main.Variables.name;
             labelusername.Text = main.Variables.username;
             labelid.Text = main.Variables.userid;

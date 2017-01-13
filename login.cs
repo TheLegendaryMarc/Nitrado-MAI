@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace NitadoMAI
 {
@@ -23,8 +25,8 @@ namespace NitadoMAI
 
         public class Variables
         {
-            public static string clientid = "<CLIENTID>";
-            public static string secretid = "<CLIENTSECRET>";
+            public static string clientid = "<CLIENT_ID>";
+            public static string secretid = "<CLIENT_SECRET>";
         }
             private void login_Load(object sender, EventArgs e)
         {
@@ -50,16 +52,6 @@ namespace NitadoMAI
             }
             */
 
-            
-            
-            
-               
-            
-            
-               
-           
-            
-
         }
 
 
@@ -81,18 +73,42 @@ namespace NitadoMAI
             {
                 jsonesponse = sr.ReadToEnd();
             }
-
-
+            
+            
             dynamic waffelresponse = JsonConvert.DeserializeObject(jsonesponse);
 
             string accesstoken = waffelresponse.access_token;
             string cryptedaccesstoken = Encrypt(accesstoken, "<PASSPHRASE>");
-            
+            accesstoken = "";
+            string refreshtoken = waffelresponse.refresh_token;
+            string cryptedrefreshtoken = Encrypt(refreshtoken, "<PASSPHRASE>");
+            refreshtoken = "";
+            double expires = waffelresponse.expires_in;
+
+            DateTime requesttime = Convert.ToDateTime(response.GetResponseHeader("Date"));
+            double requesttimeunix = DateTimeToUnix(requesttime);
+            double expiresin = requesttimeunix + expires;
+            DateTime expireswhen = UnixToDateTime(expiresin);
+            Properties.Settings.Default.refreshtoken = cryptedrefreshtoken;
             Properties.Settings.Default.accesstoken = cryptedaccesstoken;
+            Properties.Settings.Default.expires = expireswhen;
             Properties.Settings.Default.Save();
             return null;
 
 
+        }
+
+        public static DateTime UnixToDateTime(double unixTimeStamp)
+        {
+            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            return dtDateTime;
+        }
+
+        public static double DateTimeToUnix(DateTime dateTime)
+        {
+            return (TimeZoneInfo.ConvertTimeToUtc(dateTime) -
+                   new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc)).TotalSeconds;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -208,6 +224,7 @@ namespace NitadoMAI
 
                 makeaccessrequest(authtoken);
 
+                this.Hide();
 
                 update updateform = new update();
                 updateform.ShowDialog();

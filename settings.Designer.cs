@@ -64,6 +64,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnsavesettings = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.labelexpire = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -267,6 +269,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.labelexpire);
+            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.btnlogout);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.txtaccesstoken);
@@ -436,6 +440,24 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(10, 82);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 13);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Läuft ab am:";
+            // 
+            // labelexpire
+            // 
+            this.labelexpire.AutoSize = true;
+            this.labelexpire.Location = new System.Drawing.Point(73, 82);
+            this.labelexpire.Name = "labelexpire";
+            this.labelexpire.Size = new System.Drawing.Size(69, 13);
+            this.labelexpire.TabIndex = 5;
+            this.labelexpire.Text = "%EXPIRES%";
+            // 
             // settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,5 +527,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.Label labelexpire;
+        private System.Windows.Forms.Label label13;
     }
 }

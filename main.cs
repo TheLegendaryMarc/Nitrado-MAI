@@ -47,9 +47,15 @@ namespace NitadoMAI
             {
                 login frm = new login();
                 frm.ShowDialog();
-
+               
+                notify.ShowBalloonTip(10000,"Hallo","Willkommen zu Nitrado MAI",ToolTipIcon.Info);
             }
 
+            if(Properties.Settings.Default.expires < DateTime.Now)
+            {
+                update updateform = new update();
+                updateform.ShowDialog();
+            }
             btnrefresh.PerformClick();
         }
 
@@ -147,7 +153,7 @@ namespace NitadoMAI
             string UrlRequest = "https://api.nitrado.net/" + uri;
             var request = WebRequest.Create(UrlRequest);
             request.ContentType = "application/json; charset=utf-8";
-            request.Headers.Add("Authorization: " + login.Decrypt(Properties.Settings.Default.accesstoken, "<PASSPHRASE>"));
+            request.Headers.Add("Authorization: " + login.Decrypt(Properties.Settings.Default.accesstoken, "pShVdDgvQZ4cEbs8ugkRBKavT"));
             request.Method = method;
             
             try
@@ -157,7 +163,7 @@ namespace NitadoMAI
                 {
                     jsonesponse = sr.ReadToEnd();
                 }
-                
+                Variables.dataresponse = jsonesponse;
                 
 
             }

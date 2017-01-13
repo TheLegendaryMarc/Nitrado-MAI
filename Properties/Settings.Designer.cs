@@ -58,5 +58,28 @@ namespace NitadoMAI.Properties {
                 this["dumpsetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime expires {
+            get {
+                return ((global::System.DateTime)(this["expires"]));
+            }
+            set {
+                this["expires"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string refreshtoken {
+            get {
+                return ((string)(this["refreshtoken"]));
+            }
+            set {
+                this["refreshtoken"] = value;
+            }
+        }
     }
 }
