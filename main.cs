@@ -36,8 +36,6 @@ namespace NitadoMAI
             public static string serviceid;
             public static string servicetype;
             public static dynamic dataresponse;
-
-
         }
 
         private void main_Load(object sender, EventArgs e)
@@ -47,11 +45,10 @@ namespace NitadoMAI
             {
                 login frm = new login();
                 frm.ShowDialog();
-               
-                notify.ShowBalloonTip(10000,"Hallo","Willkommen zu Nitrado MAI",ToolTipIcon.Info);
+                notify.ShowBalloonTip(5000, "Hallo", "Willkommen zu Nitrado MAI", ToolTipIcon.Info);
             }
 
-            if(Properties.Settings.Default.expires < DateTime.Now)
+            if (Properties.Settings.Default.expires < DateTime.Now)
             {
                 update updateform = new update();
                 updateform.ShowDialog();
@@ -81,8 +78,6 @@ namespace NitadoMAI
                 foreach (var service in Variables.dataresponse.data.services)
                 {
                     string type = Convert.ToString(service.type);
-
-
                     Boolean showgame = false;
                     listservices.LargeImageList = serviceiconlist;
                     string inklammertext = Convert.ToString(service.id);
@@ -95,67 +90,51 @@ namespace NitadoMAI
                     {
                         case "gameserver":
                             imgindex = 0;
-
                             showgame = true;
                             break;
                         case "voiceserver":
                             imgindex = 1;
-
                             break;
                         case "webspace":
                             imgindex = 2;
-
                             break;
                         case "domain":
                             imgindex = 3;
-
                             break;
                         case "clanpage":
                             imgindex = 4;
-
                             break;
                         case "bouncer":
                             imgindex = 5;
-
                             break;
-
                     }
 
                     int imgintindex = Convert.ToInt32(imgindex);
-
                     var thegroup = listservices.Groups[type];
-                    var item = new ListViewItem { Text = Convert.ToString(service.type_human) + " (" + (inklammertext) + ")", Group = thegroup, ImageIndex = imgintindex, Tag = Convert.ToString(service.id) };
+                    var item = new ListViewItem
+                    {
+                        Text = Convert.ToString(service.type_human) + " (" + (inklammertext) + ")",
+                        Group = thegroup,
+                        ImageIndex = imgintindex,
+                        Tag = Convert.ToString(service.id)
+                    };
                     listservices.Items.Add(item);
-
-
                 }
 
                 Variables.dataresponse = "0";
                 labelworker.Text = "Abgeschlossen";
                 labelworker.Image = Properties.Resources.successicon;
             }
-
-
-
-
         }
-
-
-
-
         //API ADAPTER
-
         public static string nitrapi(string method, string uri)
         {
             string jsonesponse = "0";
-
-
             string UrlRequest = "https://api.nitrado.net/" + uri;
             var request = WebRequest.Create(UrlRequest);
             request.ContentType = "application/json; charset=utf-8";
-            request.Headers.Add("Authorization: " + login.Decrypt(Properties.Settings.Default.accesstoken, "pShVdDgvQZ4cEbs8ugkRBKavT"));
+            request.Headers.Add("Authorization: " + login.Decrypt(Properties.Settings.Default.accesstoken, login.Variables.passphrase));
             request.Method = method;
-            
             try
             {
                 var response = (HttpWebResponse)request.GetResponse();
@@ -164,15 +143,12 @@ namespace NitadoMAI
                     jsonesponse = sr.ReadToEnd();
                 }
                 Variables.dataresponse = jsonesponse;
-                
-
             }
             catch (WebException e)
             {
                 string errorjson = "0";
                 if (e.Response == null)
                 {
-
                     jsonesponse = "{\"status\":\"error\",\"message\":\"Keine Internetverbindung!\"}";
                     Variables.dataresponse = jsonesponse;
                 }
@@ -183,28 +159,19 @@ namespace NitadoMAI
                         errorjson = sr.ReadToEnd();
                     }
                     dynamic errorresponse = JsonConvert.DeserializeObject(errorjson);
-
                     jsonesponse = errorjson;
                     Variables.dataresponse = errorjson;
                 }
             }
-
-
             //dynamic dataresponse = JsonConvert.DeserializeObject(jsonesponse);
-
             return jsonesponse;
-
-
         }
         //Nutzerdaten holen
         public string getuserdata()
         {
-
             dynamic dataresponse = JsonConvert.DeserializeObject(nitrapi("get", "user"));
             if (dataresponse.status == "success")
             {
-
-
                 Variables.userid = dataresponse.data.user.user_id;
                 Variables.username = dataresponse.data.user.username;
                 Variables.email = dataresponse.data.user.email;
@@ -220,26 +187,14 @@ namespace NitadoMAI
             {
                 labelworker.Text = "Fehler: [" + dataresponse.status + "] " + dataresponse.message;
                 labelworker.Image = Properties.Resources.deleteicon;
-
             }
-
             return null;
-
-
         }
-
-
-
 
         private void btnrefresh_Click(object sender, EventArgs e)
         {
-
-            //mainworker.DoWork += new DoWorkEventHandler(workerdata_DoWork);
             mainworker.RunWorkerAsync();
-
         }
-
-
 
         private void btnsettings_Click(object sender, EventArgs e)
         {
@@ -251,24 +206,11 @@ namespace NitadoMAI
         {
             labelworker.Text = "Lädt...";
             labelworker.Image = Properties.Resources.squares;
-
-
             //work User Data
             labelworker.Text = "Lädt Accountdaten...";
-
-
-
-
-
-
             getuserdata();
-
-
-
             //work Services
-
             labelworker.Text = "Lädt Services...";
-
             Variables.dataresponse = JsonConvert.DeserializeObject(nitrapi("get", "services"));
         }
 
@@ -284,13 +226,88 @@ namespace NitadoMAI
         {
             payment paymentform = new payment();
             paymentform.ShowDialog();
-                
+
         }
 
         private void btnorderservice_Click(object sender, EventArgs e)
         {
             order orderform = new order();
             orderform.ShowDialog();
+        }
+
+        private void einstellungenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settings settingfenster = new settings();
+            settingfenster.ShowDialog();
+        }
+
+        private void guthabenAufladenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            payment paymentform = new payment();
+            paymentform.ShowDialog();
+        }
+
+        private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void serviceBestellenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            order orderform = new order();
+            orderform.ShowDialog();
+        }
+
+        private void accessTokenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("AccessToken wid in den Einstellungen gezeigt");
+        }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settings settingfenster = new settings();
+            settingfenster.ShowDialog();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.accesstoken = "";
+            Properties.Settings.Default.refreshtoken = "";
+            Properties.Settings.Default.expires = DateTime.Now;
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Account aus Client entfernt [Programm Neustart erforderlich]");
+            Application.Exit();
+        }
+
+        private void logoutbutton_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.accesstoken = "";
+            Properties.Settings.Default.refreshtoken = "";
+            Properties.Settings.Default.expires = DateTime.Now;
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Account aus Client entfernt [Programm Neustart erforderlich]");
+            Application.Exit();
+        }
+
+        private void supportCenterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            support supportform = new support();
+            supportform.Show();
+        }
+
+        private void hilfeAufNitradonetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://server.nitrado.net/deu/tickets/add");
+        }
+
+        private void hilfeFürMAIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/TheLegendaryMarc/Nitrado-MAI/issues");
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nitrado MAI wurde erstellt von Marc ;)");
         }
     }
 }

@@ -25,66 +25,36 @@ namespace NitadoMAI
 
         public class Variables
         {
-            public static string clientid = "<CLIENT_ID>";
-            public static string secretid = "<CLIENT_SECRET>";
+            public static string clientid = "<CLIENTID>";
+            public static string secretid = "<CLIENTSECRET>";
+            public static string passphrase = "<PASSPHRASE>";
         }
-            private void login_Load(object sender, EventArgs e)
+        private void login_Load(object sender, EventArgs e)
         {
             webbro.Navigate(new Uri("https://oauth.nitrado.net/oauth/v2/auth?client_id=" + Variables.clientid + "&scope=service%20user_info%20service_order&redirect_uri=https://server.nitrado.net/deu/gameserver-mieten&&response_type=code"));
-            webbro.DocumentCompleted +=
-            new WebBrowserDocumentCompletedEventHandler(webloaded);
         }
 
-        private void webloaded(object sender,WebBrowserDocumentCompletedEventArgs e)
-        {
-            /*
-            if (webbro.Url.ToString().Contains("https://nitradomai.marcsrv.de/empty.html?code=") == true)
-            {
-                string url = webbro.Url.ToString();
-                string authtoken = url.Replace("https://nitradomai.marcsrv.de/empty.html?code=", "");
-                
-                makeaccessrequest(authtoken);
-
-
-                update updateform = new update();
-                updateform.ShowDialog();
-                this.Close();
-            }
-            */
-
-        }
-
-
-
-        
         public static string makeaccessrequest(string authtoken)
         {
             string UrlRequest = "https://oauth.nitrado.net/oauth/v2/token?grant_type=authorization_code&code=" +
-                                 authtoken +
-                                 "&redirect_uri=https://server.nitrado.net/deu/gameserver-mieten&%20client_id=" + Variables.clientid + "&%20client_secret=" + Variables.secretid;
-
-            
+             authtoken +
+             "&redirect_uri=https://server.nitrado.net/deu/gameserver-mieten&%20client_id=" + Variables.clientid + "&%20client_secret=" + Variables.secretid;
             var request = WebRequest.Create(UrlRequest);
             request.ContentType = "application/json; charset=utf-8";
             string jsonesponse;
             var response = (HttpWebResponse)request.GetResponse();
-
             using (var sr = new StreamReader(response.GetResponseStream()))
             {
                 jsonesponse = sr.ReadToEnd();
             }
-            
-            
             dynamic waffelresponse = JsonConvert.DeserializeObject(jsonesponse);
-
             string accesstoken = waffelresponse.access_token;
-            string cryptedaccesstoken = Encrypt(accesstoken, "<PASSPHRASE>");
+            string cryptedaccesstoken = Encrypt(accesstoken, Variables.passphrase);
             accesstoken = "";
             string refreshtoken = waffelresponse.refresh_token;
-            string cryptedrefreshtoken = Encrypt(refreshtoken, "<PASSPHRASE>");
+            string cryptedrefreshtoken = Encrypt(refreshtoken, Variables.passphrase);
             refreshtoken = "";
             double expires = waffelresponse.expires_in;
-
             DateTime requesttime = Convert.ToDateTime(response.GetResponseHeader("Date"));
             double requesttimeunix = DateTimeToUnix(requesttime);
             double expiresin = requesttimeunix + expires;
@@ -94,8 +64,6 @@ namespace NitadoMAI
             Properties.Settings.Default.expires = expireswhen;
             Properties.Settings.Default.Save();
             return null;
-
-
         }
 
         public static DateTime UnixToDateTime(double unixTimeStamp)
@@ -108,22 +76,21 @@ namespace NitadoMAI
         public static double DateTimeToUnix(DateTime dateTime)
         {
             return (TimeZoneInfo.ConvertTimeToUtc(dateTime) -
-                   new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc)).TotalSeconds;
+             new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc)).TotalSeconds;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private const int Keysize = 256;
-
-        
-        private const int DerivationIterations = 1000;
+        private
+        const int Keysize = 256;
+        private
+        const int DerivationIterations = 1000;
 
         public static string Encrypt(string plainText, string passPhrase)
         {
-            
+
             var saltStringBytes = Generate256BitsOfRandomEntropy();
             var ivStringBytes = Generate256BitsOfRandomEntropy();
             var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
@@ -143,7 +110,6 @@ namespace NitadoMAI
                             {
                                 cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
                                 cryptoStream.FlushFinalBlock();
-                                
                                 var cipherTextBytes = saltStringBytes;
                                 cipherTextBytes = cipherTextBytes.Concat(ivStringBytes).ToArray();
                                 cipherTextBytes = cipherTextBytes.Concat(memoryStream.ToArray()).ToArray();
@@ -159,15 +125,10 @@ namespace NitadoMAI
 
         public static string Decrypt(string cipherText, string passPhrase)
         {
-           
             var cipherTextBytesWithSaltAndIv = Convert.FromBase64String(cipherText);
-            
             var saltStringBytes = cipherTextBytesWithSaltAndIv.Take(Keysize / 8).ToArray();
-           
             var ivStringBytes = cipherTextBytesWithSaltAndIv.Skip(Keysize / 8).Take(Keysize / 8).ToArray();
-           
             var cipherTextBytes = cipherTextBytesWithSaltAndIv.Skip((Keysize / 8) * 2).Take(cipherTextBytesWithSaltAndIv.Length - ((Keysize / 8) * 2)).ToArray();
-
             using (var password = new Rfc2898DeriveBytes(passPhrase, saltStringBytes, DerivationIterations))
             {
                 var keyBytes = password.GetBytes(Keysize / 8);
@@ -196,23 +157,12 @@ namespace NitadoMAI
 
         private static byte[] Generate256BitsOfRandomEntropy()
         {
-            var randomBytes = new byte[32]; 
+            var randomBytes = new byte[32];
             using (var rngCsp = new RNGCryptoServiceProvider())
             {
-                
                 rngCsp.GetBytes(randomBytes);
             }
             return randomBytes;
-        }
-
-        private void webbro_Navigating(object sender, WebBrowserNavigatingEventArgs e)
-        {
-           
-        }
-
-        private void webbro_Navigated(object sender, WebBrowserNavigatedEventArgs e)
-        {
-           // MessageBox.Show("Diese URL wurde geladen: " + webbro.Url.ToString());
         }
 
         private void webbro_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -221,11 +171,8 @@ namespace NitadoMAI
             {
                 string url = webbro.Url.ToString();
                 string authtoken = url.Replace("https://server.nitrado.net/deu/gameserver-mieten?code=", "");
-
                 makeaccessrequest(authtoken);
-
                 this.Hide();
-
                 update updateform = new update();
                 updateform.ShowDialog();
                 this.Close();

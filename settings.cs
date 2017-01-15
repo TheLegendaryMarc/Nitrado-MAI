@@ -40,12 +40,14 @@ namespace NitadoMAI
             labelprogramm.Text = Application.ProductName;
             labelversion.Text = Application.ProductVersion;
             labelcodename.Text = "Return";
-            txtaccesstoken.Text = login.Decrypt(Properties.Settings.Default.accesstoken, "<PASSPHRASE>");
+            txtaccesstoken.Text = login.Decrypt(Properties.Settings.Default.accesstoken, login.Variables.passphrase);
         }
 
         private void btnlogout_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.accesstoken = "";
+            Properties.Settings.Default.refreshtoken = "";
+            Properties.Settings.Default.expires = DateTime.Now;
             Properties.Settings.Default.Save();
             MessageBox.Show("Account aus Client entfernt [Programm Neustart erforderlich]");
             Application.Exit();

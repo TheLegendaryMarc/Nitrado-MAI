@@ -126,6 +126,12 @@
     <Compile Include="settings.Designer.cs">
       <DependentUpon>settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="support.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="support.Designer.cs">
+      <DependentUpon>support.cs</DependentUpon>
+    </Compile>
     <Compile Include="update.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="settings.resx">
       <DependentUpon>settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="support.resx">
+      <DependentUpon>support.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="update.resx">
       <DependentUpon>update.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +186,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="nitrado.ico" />
+    <None Include="Resources\Apps-kmymoney-icon.png" />
+    <None Include="Resources\webspaceicon.png" />
+    <None Include="Resources\Editing-Text-Color-icon.png" />
+    <None Include="Resources\lock-icon.png" />
+    <None Include="Resources\Actions-application-exit-icon.png" />
+    <None Include="Resources\User-Interface-Logout-icon.png" />
+    <None Include="Resources\marcsrvicon.png" />
+    <None Include="Resources\question-faq-icon.png" />
+    <None Include="Resources\Very-Basic-Help-2-icon.png" />
+    <None Include="Resources\Users-Name-icon.png" />
+    <None Include="Resources\user-icon.png" />
+    <None Include="Resources\Settingsicon.png" />
+    <None Include="Resources\servericon1.png" />
+    <None Include="Resources\nitrado.png" />
+    <None Include="Resources\refreshicon.png" />
     <None Include="Resources\servericon.png" />
     <None Include="Resources\404gif.gif" />
     <None Include="Resources\plusicon.png" />

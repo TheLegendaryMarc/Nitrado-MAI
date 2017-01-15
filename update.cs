@@ -23,18 +23,20 @@ namespace NitadoMAI
 
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            
             //Update AccessToken When Expires
 
             if(Properties.Settings.Default.expires < DateTime.Now)
             {
                 labelupdateworker.Text = "AccessToken wird erneuert...";
+                
                 labelupdateworker.Image = Properties.Resources.squares;
-                string refreshtokenold = login.Decrypt(Properties.Settings.Default.refreshtoken, "<PASSPHRASE>");
+                string refreshtokenold = login.Decrypt(Properties.Settings.Default.refreshtoken, login.Variables.passphrase);
                 string UrlRequest = "https://oauth.nitrado.net/oauth/v2/token?grant_type=refresh_token&refresh_token=" +
                                  refreshtokenold +
                                  "&client_id=" + login.Variables.clientid + "&client_secret=" + login.Variables.secretid;
 
-
+                
                 var request = WebRequest.Create(UrlRequest);
                 request.ContentType = "application/json; charset=utf-8";
                 string jsonesponse;
@@ -44,15 +46,15 @@ namespace NitadoMAI
                 {
                     jsonesponse = sr.ReadToEnd();
                 }
-
                 
+
                 dynamic waffelresponse = JsonConvert.DeserializeObject(jsonesponse);
 
                 string accesstoken = waffelresponse.access_token;
-                string cryptedaccesstoken = login.Encrypt(accesstoken, "<PASSPHRASE>");
+                string cryptedaccesstoken = login.Encrypt(accesstoken, login.Variables.passphrase);
                 accesstoken = "";
                 string refreshtoken = waffelresponse.refresh_token;
-                string cryptedrefreshtoken = login.Encrypt(refreshtoken, "<PASSPHRASE>");
+                string cryptedrefreshtoken = login.Encrypt(refreshtoken, login.Variables.passphrase);
                 refreshtoken = "";
                 double expires = waffelresponse.expires_in;
 
@@ -67,6 +69,7 @@ namespace NitadoMAI
             }
 
             //Update GameDB
+            
             labelupdateworker.Text = "Aktualisiere Gamedatenbank...";
             labelupdateworker.Image = Properties.Resources.squares;
             string gamedb = main.nitrapi("get", "gameserver/games");
@@ -81,6 +84,7 @@ namespace NitadoMAI
 
             int id = 0;
             dynamic dataresponse = JsonConvert.DeserializeObject(gamedb);
+            
             foreach (var game in dataresponse.data.games.games)
             {
                 string url = game.icons["x120"];
@@ -88,16 +92,18 @@ namespace NitadoMAI
                 using (var client = new WebClient())
                 {
                     client.DownloadFile(url, Application.CommonAppDataPath + "/gameimages/" + name + ".jpg");
+                    
                 }
                 id++;
             }
-
+            
             //Update PaymentDB
+            
             labelupdateworker.Text = "Aktualisiere Zahlungsmethoden...";
             string paymentdb = main.nitrapi("get", "order/payment/payment_methods");
             System.IO.File.WriteAllText(Application.CommonAppDataPath + @"\paymentdb.txt", paymentdb);
-
             
+
 
         }
 
@@ -118,5 +124,7 @@ namespace NitadoMAI
         {
             worker.RunWorkerAsync();
         }
+
+        
     }
 }

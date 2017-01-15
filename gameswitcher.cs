@@ -19,8 +19,6 @@ namespace NitadoMAI
             InitializeComponent();
         }
 
-
-
         private void gameswitcher_Load(object sender, EventArgs e)
         {
             int id2 = 0;
