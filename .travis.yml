@@ -1,0 +1,6 @@
+language: csharp
+solution: NitadoMAI.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore NitadoMAI.sln
