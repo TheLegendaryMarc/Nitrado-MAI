@@ -63,26 +63,6 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Actions_application_exit_icon {
-            get {
-                object obj = ResourceManager.GetObject("Actions-application-exit-icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Apps_kmymoney_icon {
-            get {
-                object obj = ResourceManager.GetObject("Apps-kmymoney-icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Appssessionlogouticon {
             get {
                 object obj = ResourceManager.GetObject("Appssessionlogouticon", resourceCulture);
@@ -103,9 +83,19 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Editing_Text_Color_icon {
+        internal static System.Drawing.Bitmap editing {
             get {
-                object obj = ResourceManager.GetObject("Editing-Text-Color-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("editing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exiticon {
+            get {
+                object obj = ResourceManager.GetObject("exiticon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +113,29 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lock_icon {
+        internal static System.Drawing.Bitmap helpicon {
             get {
-                object obj = ResourceManager.GetObject("lock-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("helpicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lockicon {
+            get {
+                object obj = ResourceManager.GetObject("lockicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logouticon {
+            get {
+                object obj = ResourceManager.GetObject("logouticon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +173,16 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap moneyicon {
+            get {
+                object obj = ResourceManager.GetObject("moneyicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nitrado {
             get {
                 object obj = ResourceManager.GetObject("nitrado", resourceCulture);
@@ -193,9 +213,9 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap question_faq_icon {
+        internal static System.Drawing.Bitmap questionfaq {
             get {
-                object obj = ResourceManager.GetObject("question-faq-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("questionfaq", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +303,9 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_icon {
+        internal static System.Drawing.Bitmap usericon {
             get {
-                object obj = ResourceManager.GetObject("user-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("usericon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,29 +313,9 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap User_Interface_Logout_icon {
+        internal static System.Drawing.Bitmap usericonagain {
             get {
-                object obj = ResourceManager.GetObject("User-Interface-Logout-icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Users_Name_icon {
-            get {
-                object obj = ResourceManager.GetObject("Users-Name-icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Very_Basic_Help_2_icon {
-            get {
-                object obj = ResourceManager.GetObject("Very-Basic-Help-2-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("usericonagain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

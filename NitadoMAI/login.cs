@@ -25,9 +25,9 @@ namespace NitadoMAI
 
         public class Variables
         {
-            public static string clientid = "<CLIENTID>";
-            public static string secretid = "<CLIENTSECRET>";
-            public static string passphrase = "<PASSPHRASE>";
+            public static string clientid = "";
+            public static string secretid = "";
+            public static string passphrase = "";
         }
         private void login_Load(object sender, EventArgs e)
         {

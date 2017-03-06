@@ -284,7 +284,7 @@
             // 
             // beendenToolStripMenuItem
             // 
-            this.beendenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.Actions_application_exit_icon;
+            this.beendenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.exiticon;
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
             this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
@@ -323,7 +323,7 @@
             this.verschlüsselungToolStripMenuItem,
             this.accountToolStripMenuItem,
             this.logoutToolStripMenuItem});
-            this.toolStripDropDownButton2.Image = global::NitadoMAI.Properties.Resources.Users_Name_icon;
+            this.toolStripDropDownButton2.Image = global::NitadoMAI.Properties.Resources.usericon;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
             this.toolStripDropDownButton2.Size = new System.Drawing.Size(81, 22);
@@ -331,7 +331,7 @@
             // 
             // accessTokenToolStripMenuItem
             // 
-            this.accessTokenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.Editing_Text_Color_icon;
+            this.accessTokenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.editing;
             this.accessTokenToolStripMenuItem.Name = "accessTokenToolStripMenuItem";
             this.accessTokenToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.accessTokenToolStripMenuItem.Text = "AccessToken";
@@ -339,7 +339,7 @@
             // 
             // guthabenAufladenToolStripMenuItem
             // 
-            this.guthabenAufladenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.Apps_kmymoney_icon;
+            this.guthabenAufladenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.moneyicon;
             this.guthabenAufladenToolStripMenuItem.Name = "guthabenAufladenToolStripMenuItem";
             this.guthabenAufladenToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.guthabenAufladenToolStripMenuItem.Text = "Guthaben aufladen";
@@ -348,14 +348,14 @@
             // verschlüsselungToolStripMenuItem
             // 
             this.verschlüsselungToolStripMenuItem.Enabled = false;
-            this.verschlüsselungToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.lock_icon;
+            this.verschlüsselungToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.lockicon;
             this.verschlüsselungToolStripMenuItem.Name = "verschlüsselungToolStripMenuItem";
             this.verschlüsselungToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.verschlüsselungToolStripMenuItem.Text = "Verschlüsselung";
             // 
             // accountToolStripMenuItem
             // 
-            this.accountToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.Users_Name_icon;
+            this.accountToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.usericon;
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
             this.accountToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.accountToolStripMenuItem.Text = "Account";
@@ -363,7 +363,7 @@
             // 
             // logoutToolStripMenuItem
             // 
-            this.logoutToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.User_Interface_Logout_icon;
+            this.logoutToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.logouticon;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
@@ -376,7 +376,7 @@
             this.hilfeAufNitradonetToolStripMenuItem,
             this.hilfeFürMAIToolStripMenuItem,
             this.infoToolStripMenuItem});
-            this.toolStripDropDownButton3.Image = global::NitadoMAI.Properties.Resources.question_faq_icon;
+            this.toolStripDropDownButton3.Image = global::NitadoMAI.Properties.Resources.questionfaq;
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
             this.toolStripDropDownButton3.Size = new System.Drawing.Size(61, 22);
@@ -413,7 +413,7 @@
             // logoutbutton
             // 
             this.logoutbutton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.logoutbutton.Image = global::NitadoMAI.Properties.Resources.User_Interface_Logout_icon;
+            this.logoutbutton.Image = global::NitadoMAI.Properties.Resources.logouticon;
             this.logoutbutton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.logoutbutton.Name = "logoutbutton";
             this.logoutbutton.Size = new System.Drawing.Size(65, 22);
