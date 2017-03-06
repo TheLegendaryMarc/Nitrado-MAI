@@ -173,9 +173,9 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Nitradobig {
+        internal static System.Drawing.Bitmap nitradologo {
             get {
-                object obj = ResourceManager.GetObject("Nitradobig", resourceCulture);
+                object obj = ResourceManager.GetObject("nitradologo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

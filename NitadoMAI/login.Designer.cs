@@ -85,7 +85,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::NitadoMAI.Properties.Resources.Nitradobig;
+            this.pictureBox2.Image = global::NitadoMAI.Properties.Resources.nitradologo;
             this.pictureBox2.Location = new System.Drawing.Point(487, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(247, 134);
