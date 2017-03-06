@@ -196,19 +196,9 @@
     <None Include="Resources\logouttwo.png" />
     <None Include="Resources\usericon.png" />
     <None Include="Resources\logouticon.png" />
-    <None Include="Resources\Apps-kmymoney-icon.png" />
     <None Include="Resources\webspaceicon.png" />
-    <None Include="Resources\Editing-Text-Color-icon.png" />
-    <None Include="Resources\lock-icon.png" />
-    <None Include="Resources\Actions-application-exit-icon.png" />
-    <None Include="Resources\User-Interface-Logout-icon.png" />
     <None Include="Resources\marcsrvicon.png" />
-    <None Include="Resources\question-faq-icon.png" />
-    <None Include="Resources\Very-Basic-Help-2-icon.png" />
-    <None Include="Resources\Users-Name-icon.png" />
-    <None Include="Resources\user-icon.png" />
     <None Include="Resources\Settingsicon.png" />
-    <None Include="Resources\servericon1.png" />
     <None Include="Resources\nitrado.png" />
     <None Include="Resources\refreshicon.png" />
     <None Include="Resources\servericon.png" />
@@ -216,14 +206,7 @@
     <None Include="Resources\plusicon.png" />
     <None Include="Resources\deleteicon.png" />
     <None Include="Resources\squaresloading.gif" />
-    <None Include="Resources\marcsrv_logo_white1.png" />
-    <None Include="Resources\Apps-session-logout-icon.png" />
-    <None Include="Resources\unknown-user.jpg" />
     <None Include="Resources\squares.gif" />
-    <None Include="Resources\success-icon.png" />
-    <None Include="Resources\marcsrv_logo_white.png" />
-    <None Include="Resources\marcsrv_logo_black.jpg" />
-    <None Include="Resources\marcsrv_logo_white.jpg" />
     <None Include="Resources\nitradologo.png" />
     <None Include="Resources\Nitradobig.png" />
   </ItemGroup>
