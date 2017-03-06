@@ -194,11 +194,13 @@
             // 
             this.serviceiconlist.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("serviceiconlist.ImageStream")));
             this.serviceiconlist.TransparentColor = System.Drawing.Color.Transparent;
+            /* ToDo Add Imagelist
             this.serviceiconlist.Images.SetKeyName(0, "servericon.png");
             this.serviceiconlist.Images.SetKeyName(1, "teamspeakicon.png");
             this.serviceiconlist.Images.SetKeyName(2, "webspaceicon.png");
             this.serviceiconlist.Images.SetKeyName(3, "clanpageicon.png");
             this.serviceiconlist.Images.SetKeyName(4, "domainicon.png");
+            */
             // 
             // notify
             // 

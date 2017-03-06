@@ -223,6 +223,16 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap servericon1 {
+            get {
+                object obj = ResourceManager.GetObject("servericon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Settingsicon {
             get {
                 object obj = ResourceManager.GetObject("Settingsicon", resourceCulture);
@@ -256,6 +266,16 @@ namespace NitadoMAI.Properties {
         internal static System.Drawing.Bitmap usericon {
             get {
                 object obj = ResourceManager.GetObject("usericon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap webspaceicon {
+            get {
+                object obj = ResourceManager.GetObject("webspaceicon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
