@@ -5,4 +5,4 @@ before_install:
 before_script:
   - nuget restore NitadoMAI.sln
 script:
-  - xbuild /p:Configuration=Debug solution-name.sln
+  - xbuild /p:Configuration=Debug NitadoMAI.sln
