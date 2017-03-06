@@ -44,12 +44,14 @@
             this.listservertype = new System.Windows.Forms.CheckedListBox();
             this.taborder = new System.Windows.Forms.TabControl();
             this.tabgameserver = new System.Windows.Forms.TabPage();
+            this.btnorder = new System.Windows.Forms.Button();
             this.Laufzeit = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tracklaufzeit = new System.Windows.Forms.TrackBar();
+            this.labelprice = new System.Windows.Forms.Label();
             this.groupramupgrade = new System.Windows.Forms.GroupBox();
             this.labelserverram = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +60,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.trackupgrade = new System.Windows.Forms.TrackBar();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupslots = new System.Windows.Forms.GroupBox();
             this.labelmaxslots = new System.Windows.Forms.Label();
             this.labelminslots = new System.Windows.Forms.Label();
@@ -66,35 +69,32 @@
             this.labelslots = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.trackslots = new System.Windows.Forms.TrackBar();
-            this.tabvoiceserver = new System.Windows.Forms.TabPage();
-            this.tabwebspace = new System.Windows.Forms.TabPage();
-            this.tabmusicbot = new System.Windows.Forms.TabPage();
-            this.tabventrillo = new System.Windows.Forms.TabPage();
-            this.tabmumble = new System.Windows.Forms.TabPage();
-            this.tabbouncer = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.labelinstallgame = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.labelprice = new System.Windows.Forms.Label();
-            this.btnorder = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listlocationts = new System.Windows.Forms.CheckedListBox();
-            this.groupslotsts = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.labelslotsts = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.tracktsslots = new System.Windows.Forms.TrackBar();
-            this.btnorderts = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabvoiceserver = new System.Windows.Forms.TabPage();
+            this.labeltsprice = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.tracklaufzeitts = new System.Windows.Forms.TrackBar();
-            this.label21 = new System.Windows.Forms.Label();
-            this.labeltsprice = new System.Windows.Forms.Label();
+            this.btnorderts = new System.Windows.Forms.Button();
+            this.groupslotsts = new System.Windows.Forms.GroupBox();
             this.labeltslocation = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.labelslotsts = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tracktsslots = new System.Windows.Forms.TrackBar();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listlocationts = new System.Windows.Forms.CheckedListBox();
+            this.tabwebspace = new System.Windows.Forms.TabPage();
+            this.tabmusicbot = new System.Windows.Forms.TabPage();
+            this.tabventrillo = new System.Windows.Forms.TabPage();
+            this.tabmumble = new System.Windows.Forms.TabPage();
+            this.tabbouncer = new System.Windows.Forms.TabPage();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupserver.SuspendLayout();
@@ -107,11 +107,11 @@
             this.groupslots.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackslots)).BeginInit();
             this.tabvoiceserver.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupslotsts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tracktsslots)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracklaufzeitts)).BeginInit();
+            this.groupslotsts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tracktsslots)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -274,6 +274,18 @@
             this.tabgameserver.Text = "Gameserver";
             this.tabgameserver.UseVisualStyleBackColor = true;
             // 
+            // btnorder
+            // 
+            this.btnorder.Enabled = false;
+            this.btnorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnorder.Location = new System.Drawing.Point(605, 464);
+            this.btnorder.Name = "btnorder";
+            this.btnorder.Size = new System.Drawing.Size(116, 29);
+            this.btnorder.TabIndex = 11;
+            this.btnorder.Text = "Bestellen";
+            this.btnorder.UseVisualStyleBackColor = true;
+            this.btnorder.Click += new System.EventHandler(this.btnorder_Click);
+            // 
             // Laufzeit
             // 
             this.Laufzeit.Controls.Add(this.label12);
@@ -333,6 +345,16 @@
             this.tracklaufzeit.Size = new System.Drawing.Size(699, 45);
             this.tracklaufzeit.TabIndex = 0;
             this.tracklaufzeit.Scroll += new System.EventHandler(this.tracklaufzeit_Scroll);
+            // 
+            // labelprice
+            // 
+            this.labelprice.AutoSize = true;
+            this.labelprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelprice.Location = new System.Drawing.Point(407, 464);
+            this.labelprice.Name = "labelprice";
+            this.labelprice.Size = new System.Drawing.Size(66, 24);
+            this.labelprice.TabIndex = 10;
+            this.labelprice.Text = "0,00 €";
             // 
             // groupramupgrade
             // 
@@ -415,6 +437,16 @@
             this.trackupgrade.Size = new System.Drawing.Size(699, 45);
             this.trackupgrade.TabIndex = 0;
             this.trackupgrade.Scroll += new System.EventHandler(this.trackupgrade_Scroll);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(338, 464);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 24);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "Preis:";
             // 
             // groupslots
             // 
@@ -500,6 +532,37 @@
             this.trackslots.Value = 4;
             this.trackslots.Scroll += new System.EventHandler(this.trackslots_Scroll);
             // 
+            // labelinstallgame
+            // 
+            this.labelinstallgame.AutoSize = true;
+            this.labelinstallgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelinstallgame.Location = new System.Drawing.Point(153, 470);
+            this.labelinstallgame.Name = "labelinstallgame";
+            this.labelinstallgame.Size = new System.Drawing.Size(139, 16);
+            this.labelinstallgame.TabIndex = 8;
+            this.labelinstallgame.Text = "Kein Spiel ausgewählt";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(107, 470);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(48, 16);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Game:";
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(10, 467);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Spiel wählen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tabvoiceserver
             // 
             this.tabvoiceserver.Controls.Add(this.labeltsprice);
@@ -517,215 +580,25 @@
             this.tabvoiceserver.Text = "Voiceserver";
             this.tabvoiceserver.UseVisualStyleBackColor = true;
             // 
-            // tabwebspace
+            // labeltsprice
             // 
-            this.tabwebspace.Location = new System.Drawing.Point(4, 22);
-            this.tabwebspace.Name = "tabwebspace";
-            this.tabwebspace.Size = new System.Drawing.Size(733, 463);
-            this.tabwebspace.TabIndex = 2;
-            this.tabwebspace.Tag = "webspace";
-            this.tabwebspace.Text = "Webspace";
-            this.tabwebspace.UseVisualStyleBackColor = true;
+            this.labeltsprice.AutoSize = true;
+            this.labeltsprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeltsprice.Location = new System.Drawing.Point(264, 460);
+            this.labeltsprice.Name = "labeltsprice";
+            this.labeltsprice.Size = new System.Drawing.Size(60, 24);
+            this.labeltsprice.TabIndex = 10;
+            this.labeltsprice.Text = "0,00 €";
             // 
-            // tabmusicbot
+            // label21
             // 
-            this.tabmusicbot.Location = new System.Drawing.Point(4, 22);
-            this.tabmusicbot.Name = "tabmusicbot";
-            this.tabmusicbot.Size = new System.Drawing.Size(733, 463);
-            this.tabmusicbot.TabIndex = 3;
-            this.tabmusicbot.Tag = "musicbot";
-            this.tabmusicbot.Text = "MusicBot";
-            this.tabmusicbot.UseVisualStyleBackColor = true;
-            // 
-            // tabventrillo
-            // 
-            this.tabventrillo.Location = new System.Drawing.Point(4, 22);
-            this.tabventrillo.Name = "tabventrillo";
-            this.tabventrillo.Size = new System.Drawing.Size(733, 463);
-            this.tabventrillo.TabIndex = 4;
-            this.tabventrillo.Tag = "ventrillo";
-            this.tabventrillo.Text = "Ventrillo";
-            this.tabventrillo.UseVisualStyleBackColor = true;
-            // 
-            // tabmumble
-            // 
-            this.tabmumble.Location = new System.Drawing.Point(4, 22);
-            this.tabmumble.Name = "tabmumble";
-            this.tabmumble.Size = new System.Drawing.Size(733, 463);
-            this.tabmumble.TabIndex = 5;
-            this.tabmumble.Tag = "mumble";
-            this.tabmumble.Text = "Mumble";
-            this.tabmumble.UseVisualStyleBackColor = true;
-            // 
-            // tabbouncer
-            // 
-            this.tabbouncer.Location = new System.Drawing.Point(4, 22);
-            this.tabbouncer.Name = "tabbouncer";
-            this.tabbouncer.Size = new System.Drawing.Size(733, 463);
-            this.tabbouncer.TabIndex = 6;
-            this.tabbouncer.Tag = "bouncer";
-            this.tabbouncer.Text = "Bouncer";
-            this.tabbouncer.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(10, 467);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Spiel wählen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(107, 470);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(48, 16);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Game:";
-            // 
-            // labelinstallgame
-            // 
-            this.labelinstallgame.AutoSize = true;
-            this.labelinstallgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelinstallgame.Location = new System.Drawing.Point(153, 470);
-            this.labelinstallgame.Name = "labelinstallgame";
-            this.labelinstallgame.Size = new System.Drawing.Size(139, 16);
-            this.labelinstallgame.TabIndex = 8;
-            this.labelinstallgame.Text = "Kein Spiel ausgewählt";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(338, 464);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 24);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "Preis:";
-            // 
-            // labelprice
-            // 
-            this.labelprice.AutoSize = true;
-            this.labelprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelprice.Location = new System.Drawing.Point(407, 464);
-            this.labelprice.Name = "labelprice";
-            this.labelprice.Size = new System.Drawing.Size(66, 24);
-            this.labelprice.TabIndex = 10;
-            this.labelprice.Text = "0,00 €";
-            // 
-            // btnorder
-            // 
-            this.btnorder.Enabled = false;
-            this.btnorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnorder.Location = new System.Drawing.Point(605, 464);
-            this.btnorder.Name = "btnorder";
-            this.btnorder.Size = new System.Drawing.Size(116, 29);
-            this.btnorder.TabIndex = 11;
-            this.btnorder.Text = "Bestellen";
-            this.btnorder.UseVisualStyleBackColor = true;
-            this.btnorder.Click += new System.EventHandler(this.btnorder_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.listlocationts);
-            this.groupBox2.Location = new System.Drawing.Point(3, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(724, 78);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Location:";
-            // 
-            // listlocationts
-            // 
-            this.listlocationts.CheckOnClick = true;
-            this.listlocationts.FormattingEnabled = true;
-            this.listlocationts.Location = new System.Drawing.Point(11, 19);
-            this.listlocationts.MultiColumn = true;
-            this.listlocationts.Name = "listlocationts";
-            this.listlocationts.Size = new System.Drawing.Size(707, 49);
-            this.listlocationts.TabIndex = 0;
-            this.listlocationts.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listlocationts_ItemCheck);
-            // 
-            // groupslotsts
-            // 
-            this.groupslotsts.Controls.Add(this.labeltslocation);
-            this.groupslotsts.Controls.Add(this.label14);
-            this.groupslotsts.Controls.Add(this.label16);
-            this.groupslotsts.Controls.Add(this.labelslotsts);
-            this.groupslotsts.Controls.Add(this.label20);
-            this.groupslotsts.Controls.Add(this.tracktsslots);
-            this.groupslotsts.Enabled = false;
-            this.groupslotsts.Location = new System.Drawing.Point(3, 90);
-            this.groupslotsts.Name = "groupslotsts";
-            this.groupslotsts.Size = new System.Drawing.Size(724, 100);
-            this.groupslotsts.TabIndex = 6;
-            this.groupslotsts.TabStop = false;
-            this.groupslotsts.Text = "Slots:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(683, 61);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(25, 13);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "256";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 61);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(13, 13);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "4";
-            // 
-            // labelslotsts
-            // 
-            this.labelslotsts.AutoSize = true;
-            this.labelslotsts.Location = new System.Drawing.Point(47, 81);
-            this.labelslotsts.Name = "labelslotsts";
-            this.labelslotsts.Size = new System.Drawing.Size(13, 13);
-            this.labelslotsts.TabIndex = 2;
-            this.labelslotsts.Text = "4";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(8, 81);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(33, 13);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "Slots:";
-            // 
-            // tracktsslots
-            // 
-            this.tracktsslots.Location = new System.Drawing.Point(10, 29);
-            this.tracktsslots.Maximum = 256;
-            this.tracktsslots.Minimum = 4;
-            this.tracktsslots.Name = "tracktsslots";
-            this.tracktsslots.Size = new System.Drawing.Size(699, 45);
-            this.tracktsslots.TabIndex = 0;
-            this.tracktsslots.TickFrequency = 2;
-            this.tracktsslots.Value = 4;
-            this.tracktsslots.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // btnorderts
-            // 
-            this.btnorderts.Enabled = false;
-            this.btnorderts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnorderts.Location = new System.Drawing.Point(592, 449);
-            this.btnorderts.Name = "btnorderts";
-            this.btnorderts.Size = new System.Drawing.Size(129, 44);
-            this.btnorderts.TabIndex = 7;
-            this.btnorderts.Text = "Bestellen";
-            this.btnorderts.UseVisualStyleBackColor = true;
-            this.btnorderts.Click += new System.EventHandler(this.btnorderts_Click);
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(201, 460);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(57, 24);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "Preis:";
             // 
             // groupBox3
             // 
@@ -776,25 +649,33 @@
             this.tracklaufzeitts.TabIndex = 0;
             this.tracklaufzeitts.Scroll += new System.EventHandler(this.tracklaufzeitts_Scroll);
             // 
-            // label21
+            // btnorderts
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(201, 460);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(57, 24);
-            this.label21.TabIndex = 9;
-            this.label21.Text = "Preis:";
+            this.btnorderts.Enabled = false;
+            this.btnorderts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnorderts.Location = new System.Drawing.Point(592, 449);
+            this.btnorderts.Name = "btnorderts";
+            this.btnorderts.Size = new System.Drawing.Size(129, 44);
+            this.btnorderts.TabIndex = 7;
+            this.btnorderts.Text = "Bestellen";
+            this.btnorderts.UseVisualStyleBackColor = true;
+            this.btnorderts.Click += new System.EventHandler(this.btnorderts_Click);
             // 
-            // labeltsprice
+            // groupslotsts
             // 
-            this.labeltsprice.AutoSize = true;
-            this.labeltsprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltsprice.Location = new System.Drawing.Point(264, 460);
-            this.labeltsprice.Name = "labeltsprice";
-            this.labeltsprice.Size = new System.Drawing.Size(60, 24);
-            this.labeltsprice.TabIndex = 10;
-            this.labeltsprice.Text = "0,00 €";
+            this.groupslotsts.Controls.Add(this.labeltslocation);
+            this.groupslotsts.Controls.Add(this.label14);
+            this.groupslotsts.Controls.Add(this.label16);
+            this.groupslotsts.Controls.Add(this.labelslotsts);
+            this.groupslotsts.Controls.Add(this.label20);
+            this.groupslotsts.Controls.Add(this.tracktsslots);
+            this.groupslotsts.Enabled = false;
+            this.groupslotsts.Location = new System.Drawing.Point(3, 90);
+            this.groupslotsts.Name = "groupslotsts";
+            this.groupslotsts.Size = new System.Drawing.Size(724, 100);
+            this.groupslotsts.TabIndex = 6;
+            this.groupslotsts.TabStop = false;
+            this.groupslotsts.Text = "Slots:";
             // 
             // labeltslocation
             // 
@@ -804,6 +685,125 @@
             this.labeltslocation.Size = new System.Drawing.Size(22, 13);
             this.labeltslocation.TabIndex = 7;
             this.labeltslocation.Text = "DE";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(683, 61);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(25, 13);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "256";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(17, 61);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(13, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "4";
+            // 
+            // labelslotsts
+            // 
+            this.labelslotsts.AutoSize = true;
+            this.labelslotsts.Location = new System.Drawing.Point(47, 81);
+            this.labelslotsts.Name = "labelslotsts";
+            this.labelslotsts.Size = new System.Drawing.Size(13, 13);
+            this.labelslotsts.TabIndex = 2;
+            this.labelslotsts.Text = "4";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(8, 81);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(33, 13);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Slots:";
+            // 
+            // tracktsslots
+            // 
+            this.tracktsslots.Location = new System.Drawing.Point(10, 29);
+            this.tracktsslots.Maximum = 256;
+            this.tracktsslots.Minimum = 4;
+            this.tracktsslots.Name = "tracktsslots";
+            this.tracktsslots.Size = new System.Drawing.Size(699, 45);
+            this.tracktsslots.TabIndex = 0;
+            this.tracktsslots.TickFrequency = 2;
+            this.tracktsslots.Value = 4;
+            this.tracktsslots.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.listlocationts);
+            this.groupBox2.Location = new System.Drawing.Point(3, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(724, 78);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Location:";
+            // 
+            // listlocationts
+            // 
+            this.listlocationts.CheckOnClick = true;
+            this.listlocationts.FormattingEnabled = true;
+            this.listlocationts.Location = new System.Drawing.Point(11, 19);
+            this.listlocationts.MultiColumn = true;
+            this.listlocationts.Name = "listlocationts";
+            this.listlocationts.Size = new System.Drawing.Size(707, 49);
+            this.listlocationts.TabIndex = 0;
+            this.listlocationts.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listlocationts_ItemCheck);
+            // 
+            // tabwebspace
+            // 
+            this.tabwebspace.Location = new System.Drawing.Point(4, 22);
+            this.tabwebspace.Name = "tabwebspace";
+            this.tabwebspace.Size = new System.Drawing.Size(733, 499);
+            this.tabwebspace.TabIndex = 2;
+            this.tabwebspace.Tag = "webspace";
+            this.tabwebspace.Text = "Webspace";
+            this.tabwebspace.UseVisualStyleBackColor = true;
+            // 
+            // tabmusicbot
+            // 
+            this.tabmusicbot.Location = new System.Drawing.Point(4, 22);
+            this.tabmusicbot.Name = "tabmusicbot";
+            this.tabmusicbot.Size = new System.Drawing.Size(733, 499);
+            this.tabmusicbot.TabIndex = 3;
+            this.tabmusicbot.Tag = "musicbot";
+            this.tabmusicbot.Text = "MusicBot";
+            this.tabmusicbot.UseVisualStyleBackColor = true;
+            // 
+            // tabventrillo
+            // 
+            this.tabventrillo.Location = new System.Drawing.Point(4, 22);
+            this.tabventrillo.Name = "tabventrillo";
+            this.tabventrillo.Size = new System.Drawing.Size(733, 499);
+            this.tabventrillo.TabIndex = 4;
+            this.tabventrillo.Tag = "ventrillo";
+            this.tabventrillo.Text = "Ventrillo";
+            this.tabventrillo.UseVisualStyleBackColor = true;
+            // 
+            // tabmumble
+            // 
+            this.tabmumble.Location = new System.Drawing.Point(4, 22);
+            this.tabmumble.Name = "tabmumble";
+            this.tabmumble.Size = new System.Drawing.Size(733, 499);
+            this.tabmumble.TabIndex = 5;
+            this.tabmumble.Tag = "mumble";
+            this.tabmumble.Text = "Mumble";
+            this.tabmumble.UseVisualStyleBackColor = true;
+            // 
+            // tabbouncer
+            // 
+            this.tabbouncer.Location = new System.Drawing.Point(4, 22);
+            this.tabbouncer.Name = "tabbouncer";
+            this.tabbouncer.Size = new System.Drawing.Size(733, 499);
+            this.tabbouncer.TabIndex = 6;
+            this.tabbouncer.Tag = "bouncer";
+            this.tabbouncer.Text = "Bouncer";
+            this.tabbouncer.UseVisualStyleBackColor = true;
             // 
             // order
             // 
@@ -837,13 +837,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackslots)).EndInit();
             this.tabvoiceserver.ResumeLayout(false);
             this.tabvoiceserver.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupslotsts.ResumeLayout(false);
-            this.groupslotsts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tracktsslots)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracklaufzeitts)).EndInit();
+            this.groupslotsts.ResumeLayout(false);
+            this.groupslotsts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tracktsslots)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

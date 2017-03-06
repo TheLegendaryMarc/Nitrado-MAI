@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Gameserver", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Voiceserver", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Webspace", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Domain", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("CMS", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Bouncer", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("Clanpage", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("Gameserver", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("Voiceserver", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("Webspace", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup11 = new System.Windows.Forms.ListViewGroup("Domain", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup12 = new System.Windows.Forms.ListViewGroup("CMS", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup13 = new System.Windows.Forms.ListViewGroup("Bouncer", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup14 = new System.Windows.Forms.ListViewGroup("Clanpage", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.mainworker = new System.ComponentModel.BackgroundWorker();
             this.tardis = new System.Windows.Forms.Timer(this.components);
@@ -51,6 +51,9 @@
             this.notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnrefresh = new System.Windows.Forms.Button();
+            this.picavatar = new System.Windows.Forms.PictureBox();
+            this.labelworker = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainmenubutton = new System.Windows.Forms.ToolStripDropDownButton();
             this.einstellungenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,13 +72,8 @@
             this.hilfeFürMAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutbutton = new System.Windows.Forms.ToolStripButton();
-            this.btnrefresh = new System.Windows.Forms.Button();
-            this.picavatar = new System.Windows.Forms.PictureBox();
-            this.labelworker = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusstrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picavatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,8 +84,6 @@
             // 
             // statusstrip
             // 
-            this.statusstrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.labelworker});
             this.statusstrip.Location = new System.Drawing.Point(0, 566);
             this.statusstrip.Name = "statusstrip";
             this.statusstrip.Size = new System.Drawing.Size(926, 22);
@@ -164,28 +160,28 @@
             // listservices
             // 
             this.listservices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            listViewGroup1.Header = "Gameserver";
-            listViewGroup1.Name = "gameserver";
-            listViewGroup2.Header = "Voiceserver";
-            listViewGroup2.Name = "voiceserver";
-            listViewGroup3.Header = "Webspace";
-            listViewGroup3.Name = "webspace";
-            listViewGroup4.Header = "Domain";
-            listViewGroup4.Name = "domain";
-            listViewGroup5.Header = "CMS";
-            listViewGroup5.Name = "cms";
-            listViewGroup6.Header = "Bouncer";
-            listViewGroup6.Name = "bouncer";
-            listViewGroup7.Header = "Clanpage";
-            listViewGroup7.Name = "clanpage";
+            listViewGroup8.Header = "Gameserver";
+            listViewGroup8.Name = "gameserver";
+            listViewGroup9.Header = "Voiceserver";
+            listViewGroup9.Name = "voiceserver";
+            listViewGroup10.Header = "Webspace";
+            listViewGroup10.Name = "webspace";
+            listViewGroup11.Header = "Domain";
+            listViewGroup11.Name = "domain";
+            listViewGroup12.Header = "CMS";
+            listViewGroup12.Name = "cms";
+            listViewGroup13.Header = "Bouncer";
+            listViewGroup13.Name = "bouncer";
+            listViewGroup14.Header = "Clanpage";
+            listViewGroup14.Name = "clanpage";
             this.listservices.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3,
-            listViewGroup4,
-            listViewGroup5,
-            listViewGroup6,
-            listViewGroup7});
+            listViewGroup8,
+            listViewGroup9,
+            listViewGroup10,
+            listViewGroup11,
+            listViewGroup12,
+            listViewGroup13,
+            listViewGroup14});
             this.listservices.LargeImageList = this.serviceiconlist;
             this.listservices.Location = new System.Drawing.Point(6, 28);
             this.listservices.Name = "listservices";
@@ -223,17 +219,39 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainmenubutton,
-            this.servicetoolstrip,
-            this.toolStripDropDownButton2,
-            this.toolStripDropDownButton3,
-            this.logoutbutton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(926, 25);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnrefresh
+            // 
+            this.btnrefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnrefresh.Image")));
+            this.btnrefresh.Location = new System.Drawing.Point(859, 137);
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(37, 37);
+            this.btnrefresh.TabIndex = 3;
+            this.btnrefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnrefresh.UseVisualStyleBackColor = true;
+            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
+            // 
+            // picavatar
+            // 
+            this.picavatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picavatar.InitialImage")));
+            this.picavatar.Location = new System.Drawing.Point(13, 16);
+            this.picavatar.Name = "picavatar";
+            this.picavatar.Size = new System.Drawing.Size(150, 150);
+            this.picavatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picavatar.TabIndex = 4;
+            this.picavatar.TabStop = false;
+            // 
+            // labelworker
+            // 
+            this.labelworker.Image = ((System.Drawing.Image)(resources.GetObject("labelworker.Image")));
+            this.labelworker.Name = "labelworker";
+            this.labelworker.Size = new System.Drawing.Size(208, 17);
+            this.labelworker.Text = "%STATUSBACKGROUNDWORKER%";
             // 
             // mainmenubutton
             // 
@@ -393,34 +411,6 @@
             this.logoutbutton.Text = "Logout";
             this.logoutbutton.Click += new System.EventHandler(this.logoutbutton_Click);
             // 
-            // btnrefresh
-            // 
-            this.btnrefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnrefresh.Image")));
-            this.btnrefresh.Location = new System.Drawing.Point(859, 137);
-            this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(37, 37);
-            this.btnrefresh.TabIndex = 3;
-            this.btnrefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnrefresh.UseVisualStyleBackColor = true;
-            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
-            // 
-            // picavatar
-            // 
-            this.picavatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picavatar.InitialImage")));
-            this.picavatar.Location = new System.Drawing.Point(13, 16);
-            this.picavatar.Name = "picavatar";
-            this.picavatar.Size = new System.Drawing.Size(150, 150);
-            this.picavatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picavatar.TabIndex = 4;
-            this.picavatar.TabStop = false;
-            // 
-            // labelworker
-            // 
-            this.labelworker.Image = ((System.Drawing.Image)(resources.GetObject("labelworker.Image")));
-            this.labelworker.Name = "labelworker";
-            this.labelworker.Size = new System.Drawing.Size(208, 16);
-            this.labelworker.Text = "%STATUSBACKGROUNDWORKER%";
-            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,13 +427,9 @@
             this.Name = "main";
             this.Text = "Nitrado MAI";
             this.Load += new System.EventHandler(this.main_Load);
-            this.statusstrip.ResumeLayout(false);
-            this.statusstrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picavatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

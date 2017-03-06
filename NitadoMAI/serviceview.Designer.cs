@@ -31,9 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(serviceview));
             this.servicestatusstrip = new System.Windows.Forms.StatusStrip();
+            this.labelworkerstatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.labelnextupdate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btntimerstartstop = new System.Windows.Forms.ToolStripSplitButton();
+            this.minutenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.minutenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sekundenToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sekundenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sekundenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sekundenunstableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabmaster = new System.Windows.Forms.TabControl();
             this.tabgameserver = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,11 +59,19 @@
             this.labelgamesuspendtime = new System.Windows.Forms.Label();
             this.labelgamestarttime = new System.Windows.Forms.Label();
             this.labelgameserver = new System.Windows.Forms.Label();
+            this.serverimage = new System.Windows.Forms.PictureBox();
             this.tabcloudserver = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabvoiceserver = new System.Windows.Forms.TabPage();
             this.tabwebspace = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabbouncer = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabclanpage = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelservice = new System.Windows.Forms.Label();
@@ -64,34 +80,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelservicetype = new System.Windows.Forms.Label();
             this.timermaschine = new System.Windows.Forms.Timer(this.components);
-            this.serverimage = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelworkerstatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btntimerstartstop = new System.Windows.Forms.ToolStripSplitButton();
-            this.minutenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.minutenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sekundenToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.sekundenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.sekundenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sekundenunstableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.servicestatusstrip.SuspendLayout();
             this.tabmaster.SuspendLayout();
             this.tabgameserver.SuspendLayout();
-            this.tabcloudserver.SuspendLayout();
-            this.tabwebspace.SuspendLayout();
-            this.tabbouncer.SuspendLayout();
-            this.tabclanpage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverimage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tabcloudserver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.tabwebspace.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tabbouncer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabclanpage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // servicestatusstrip
@@ -107,6 +107,13 @@
             this.servicestatusstrip.Size = new System.Drawing.Size(1013, 22);
             this.servicestatusstrip.TabIndex = 0;
             this.servicestatusstrip.Text = "statusStrip1";
+            // 
+            // labelworkerstatus
+            // 
+            this.labelworkerstatus.Image = global::NitadoMAI.Properties.Resources.deleteicon;
+            this.labelworkerstatus.Name = "labelworkerstatus";
+            this.labelworkerstatus.Size = new System.Drawing.Size(131, 17);
+            this.labelworkerstatus.Text = "Kein Service geladen";
             // 
             // toolStripStatusLabel1
             // 
@@ -125,6 +132,67 @@
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(175, 17);
             this.toolStripStatusLabel2.Text = "Sekunden bis zur Aktualisierung";
+            // 
+            // btntimerstartstop
+            // 
+            this.btntimerstartstop.BackColor = System.Drawing.Color.Blue;
+            this.btntimerstartstop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btntimerstartstop.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.minutenToolStripMenuItem1,
+            this.minutenToolStripMenuItem,
+            this.sekundenToolStripMenuItem2,
+            this.sekundenToolStripMenuItem1,
+            this.sekundenToolStripMenuItem,
+            this.sekundenunstableToolStripMenuItem});
+            this.btntimerstartstop.Image = ((System.Drawing.Image)(resources.GetObject("btntimerstartstop.Image")));
+            this.btntimerstartstop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btntimerstartstop.Name = "btntimerstartstop";
+            this.btntimerstartstop.Size = new System.Drawing.Size(208, 20);
+            this.btntimerstartstop.Tag = "60";
+            this.btntimerstartstop.Text = "Automatische Aktualisierung - OFF";
+            this.btntimerstartstop.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
+            // 
+            // minutenToolStripMenuItem1
+            // 
+            this.minutenToolStripMenuItem1.Name = "minutenToolStripMenuItem1";
+            this.minutenToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
+            this.minutenToolStripMenuItem1.Text = "5 Minuten";
+            this.minutenToolStripMenuItem1.Click += new System.EventHandler(this.minutenToolStripMenuItem1_Click);
+            // 
+            // minutenToolStripMenuItem
+            // 
+            this.minutenToolStripMenuItem.Name = "minutenToolStripMenuItem";
+            this.minutenToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.minutenToolStripMenuItem.Text = "2 Minuten";
+            this.minutenToolStripMenuItem.Click += new System.EventHandler(this.minutenToolStripMenuItem_Click);
+            // 
+            // sekundenToolStripMenuItem2
+            // 
+            this.sekundenToolStripMenuItem2.Name = "sekundenToolStripMenuItem2";
+            this.sekundenToolStripMenuItem2.Size = new System.Drawing.Size(197, 22);
+            this.sekundenToolStripMenuItem2.Text = "90 Sekunden";
+            this.sekundenToolStripMenuItem2.Click += new System.EventHandler(this.sekundenToolStripMenuItem2_Click);
+            // 
+            // sekundenToolStripMenuItem1
+            // 
+            this.sekundenToolStripMenuItem1.Name = "sekundenToolStripMenuItem1";
+            this.sekundenToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
+            this.sekundenToolStripMenuItem1.Text = "60 Sekunden";
+            this.sekundenToolStripMenuItem1.Click += new System.EventHandler(this.sekundenToolStripMenuItem1_Click);
+            // 
+            // sekundenToolStripMenuItem
+            // 
+            this.sekundenToolStripMenuItem.Name = "sekundenToolStripMenuItem";
+            this.sekundenToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.sekundenToolStripMenuItem.Text = "30 Sekunden";
+            this.sekundenToolStripMenuItem.Click += new System.EventHandler(this.sekundenToolStripMenuItem_Click);
+            // 
+            // sekundenunstableToolStripMenuItem
+            // 
+            this.sekundenunstableToolStripMenuItem.Name = "sekundenunstableToolStripMenuItem";
+            this.sekundenunstableToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.sekundenunstableToolStripMenuItem.Text = "10 Sekunden (unstable)";
+            this.sekundenunstableToolStripMenuItem.Click += new System.EventHandler(this.sekundenunstableToolStripMenuItem_Click);
             // 
             // tabmaster
             // 
@@ -311,6 +379,17 @@
             this.labelgameserver.TabIndex = 1;
             this.labelgameserver.Text = "%GAMESERVER%";
             // 
+            // serverimage
+            // 
+            this.serverimage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("serverimage.ErrorImage")));
+            this.serverimage.InitialImage = global::NitadoMAI.Properties.Resources.squares;
+            this.serverimage.Location = new System.Drawing.Point(8, 6);
+            this.serverimage.Name = "serverimage";
+            this.serverimage.Size = new System.Drawing.Size(150, 150);
+            this.serverimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.serverimage.TabIndex = 0;
+            this.serverimage.TabStop = false;
+            // 
             // tabcloudserver
             // 
             this.tabcloudserver.BackColor = System.Drawing.Color.Black;
@@ -321,6 +400,27 @@
             this.tabcloudserver.Size = new System.Drawing.Size(1005, 528);
             this.tabcloudserver.TabIndex = 5;
             this.tabcloudserver.Text = "Cloudserver";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::NitadoMAI.Properties.Resources.notfound;
+            this.pictureBox4.Location = new System.Drawing.Point(183, 97);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(630, 352);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(75, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(834, 33);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Cloudserver steht noch nicht zur Verwaltung zur Verfügung";
             // 
             // tabvoiceserver
             // 
@@ -343,6 +443,27 @@
             this.tabwebspace.TabIndex = 2;
             this.tabwebspace.Text = "Webspace";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::NitadoMAI.Properties.Resources.notfound;
+            this.pictureBox3.Location = new System.Drawing.Point(183, 109);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(630, 352);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(98, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(810, 33);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Webspace steht noch nicht zur Verwaltung zur Verfügung";
+            // 
             // tabbouncer
             // 
             this.tabbouncer.BackColor = System.Drawing.Color.Black;
@@ -354,6 +475,27 @@
             this.tabbouncer.TabIndex = 3;
             this.tabbouncer.Text = "Bouncer";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::NitadoMAI.Properties.Resources.notfound;
+            this.pictureBox2.Location = new System.Drawing.Point(176, 105);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(630, 352);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(97, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(780, 33);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Bouncer steht noch nicht zur Verwaltung zur Verfügung";
+            // 
             // tabclanpage
             // 
             this.tabclanpage.BackColor = System.Drawing.Color.Black;
@@ -364,6 +506,16 @@
             this.tabclanpage.Size = new System.Drawing.Size(1005, 528);
             this.tabclanpage.TabIndex = 4;
             this.tabclanpage.Text = "Clanpage";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NitadoMAI.Properties.Resources.notfound;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 54);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(999, 471);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -433,158 +585,6 @@
             this.timermaschine.Tag = "stopped";
             this.timermaschine.Tick += new System.EventHandler(this.timermaschine_Tick);
             // 
-            // serverimage
-            // 
-            this.serverimage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("serverimage.ErrorImage")));
-            this.serverimage.InitialImage = global::NitadoMAI.Properties.Resources.squares;
-            this.serverimage.Location = new System.Drawing.Point(8, 6);
-            this.serverimage.Name = "serverimage";
-            this.serverimage.Size = new System.Drawing.Size(150, 150);
-            this.serverimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.serverimage.TabIndex = 0;
-            this.serverimage.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::NitadoMAI.Properties.Resources.notfound;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 54);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(999, 471);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // labelworkerstatus
-            // 
-            this.labelworkerstatus.Image = global::NitadoMAI.Properties.Resources.deleteicon;
-            this.labelworkerstatus.Name = "labelworkerstatus";
-            this.labelworkerstatus.Size = new System.Drawing.Size(131, 16);
-            this.labelworkerstatus.Text = "Kein Service geladen";
-            // 
-            // btntimerstartstop
-            // 
-            this.btntimerstartstop.BackColor = System.Drawing.Color.Blue;
-            this.btntimerstartstop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btntimerstartstop.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.minutenToolStripMenuItem1,
-            this.minutenToolStripMenuItem,
-            this.sekundenToolStripMenuItem2,
-            this.sekundenToolStripMenuItem1,
-            this.sekundenToolStripMenuItem,
-            this.sekundenunstableToolStripMenuItem});
-            this.btntimerstartstop.Image = ((System.Drawing.Image)(resources.GetObject("btntimerstartstop.Image")));
-            this.btntimerstartstop.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btntimerstartstop.Name = "btntimerstartstop";
-            this.btntimerstartstop.Size = new System.Drawing.Size(208, 20);
-            this.btntimerstartstop.Tag = "60";
-            this.btntimerstartstop.Text = "Automatische Aktualisierung - OFF";
-            this.btntimerstartstop.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
-            // 
-            // minutenToolStripMenuItem1
-            // 
-            this.minutenToolStripMenuItem1.Name = "minutenToolStripMenuItem1";
-            this.minutenToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
-            this.minutenToolStripMenuItem1.Text = "5 Minuten";
-            this.minutenToolStripMenuItem1.Click += new System.EventHandler(this.minutenToolStripMenuItem1_Click);
-            // 
-            // minutenToolStripMenuItem
-            // 
-            this.minutenToolStripMenuItem.Name = "minutenToolStripMenuItem";
-            this.minutenToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.minutenToolStripMenuItem.Text = "2 Minuten";
-            this.minutenToolStripMenuItem.Click += new System.EventHandler(this.minutenToolStripMenuItem_Click);
-            // 
-            // sekundenToolStripMenuItem2
-            // 
-            this.sekundenToolStripMenuItem2.Name = "sekundenToolStripMenuItem2";
-            this.sekundenToolStripMenuItem2.Size = new System.Drawing.Size(197, 22);
-            this.sekundenToolStripMenuItem2.Text = "90 Sekunden";
-            this.sekundenToolStripMenuItem2.Click += new System.EventHandler(this.sekundenToolStripMenuItem2_Click);
-            // 
-            // sekundenToolStripMenuItem1
-            // 
-            this.sekundenToolStripMenuItem1.Name = "sekundenToolStripMenuItem1";
-            this.sekundenToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
-            this.sekundenToolStripMenuItem1.Text = "60 Sekunden";
-            this.sekundenToolStripMenuItem1.Click += new System.EventHandler(this.sekundenToolStripMenuItem1_Click);
-            // 
-            // sekundenToolStripMenuItem
-            // 
-            this.sekundenToolStripMenuItem.Name = "sekundenToolStripMenuItem";
-            this.sekundenToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.sekundenToolStripMenuItem.Text = "30 Sekunden";
-            this.sekundenToolStripMenuItem.Click += new System.EventHandler(this.sekundenToolStripMenuItem_Click);
-            // 
-            // sekundenunstableToolStripMenuItem
-            // 
-            this.sekundenunstableToolStripMenuItem.Name = "sekundenunstableToolStripMenuItem";
-            this.sekundenunstableToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.sekundenunstableToolStripMenuItem.Text = "10 Sekunden (unstable)";
-            this.sekundenunstableToolStripMenuItem.Click += new System.EventHandler(this.sekundenunstableToolStripMenuItem_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(97, 21);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(780, 33);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Bouncer steht noch nicht zur Verwaltung zur Verfügung";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(98, 17);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(810, 33);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Webspace steht noch nicht zur Verwaltung zur Verfügung";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(75, 24);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(834, 33);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Cloudserver steht noch nicht zur Verwaltung zur Verfügung";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::NitadoMAI.Properties.Resources.notfound;
-            this.pictureBox2.Location = new System.Drawing.Point(176, 105);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(630, 352);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::NitadoMAI.Properties.Resources.notfound;
-            this.pictureBox3.Location = new System.Drawing.Point(183, 109);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(630, 352);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::NitadoMAI.Properties.Resources.notfound;
-            this.pictureBox4.Location = new System.Drawing.Point(183, 97);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(630, 352);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
             // serviceview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,19 +608,19 @@
             this.tabmaster.ResumeLayout(false);
             this.tabgameserver.ResumeLayout(false);
             this.tabgameserver.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.serverimage)).EndInit();
             this.tabcloudserver.ResumeLayout(false);
             this.tabcloudserver.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabwebspace.ResumeLayout(false);
             this.tabwebspace.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabbouncer.ResumeLayout(false);
             this.tabbouncer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabclanpage.ResumeLayout(false);
             this.tabclanpage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.serverimage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

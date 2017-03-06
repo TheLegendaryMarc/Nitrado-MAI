@@ -48,9 +48,8 @@
             // 
             // labelupdateworker
             // 
-            
             this.labelupdateworker.Name = "labelupdateworker";
-            this.labelupdateworker.Size = new System.Drawing.Size(90, 17);
+            this.labelupdateworker.Size = new System.Drawing.Size(74, 17);
             this.labelupdateworker.Text = "%WORKER%";
             // 
             // worker

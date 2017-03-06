@@ -205,7 +205,6 @@
     <None Include="Resources\404gif.gif" />
     <None Include="Resources\plusicon.png" />
     <None Include="Resources\deleteicon.png" />
-    <None Include="Resources\squaresloading.gif" />
     <None Include="Resources\squares.gif" />
     <None Include="Resources\nitradologo.png" />
     <None Include="Resources\Nitradobig.png" />
