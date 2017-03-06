@@ -215,7 +215,7 @@
             listViewGroup6,
             listViewGroup7});
             this.listservices.LargeImageList = this.serviceiconlist;
-            this.listservices.Location = new System.Drawing.Point(6, 34);
+            this.listservices.Location = new System.Drawing.Point(6, 28);
             this.listservices.Name = "listservices";
             this.listservices.Size = new System.Drawing.Size(890, 315);
             this.listservices.TabIndex = 9;

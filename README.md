@@ -5,6 +5,7 @@ Willkommen zu Nitrado MAI
 Nitrado Marc Administration Interface
 -------------------------------------
 ![SourceForge Download](https://img.shields.io/badge/Development%20Status-Alpha-orange.svg)
+[![Build Status](https://travis-ci.org/TheLegendaryMarc/Nitrado-MAI.svg?branch=master)](https://travis-ci.org/TheLegendaryMarc/Nitrado-MAI)
 
 ----------
 
