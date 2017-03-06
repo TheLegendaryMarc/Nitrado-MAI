@@ -164,9 +164,6 @@
     <EmbeddedResource Include="settings.resx">
       <DependentUpon>settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="support.resx">
-      <DependentUpon>support.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="update.resx">
       <DependentUpon>update.cs</DependentUpon>
     </EmbeddedResource>
