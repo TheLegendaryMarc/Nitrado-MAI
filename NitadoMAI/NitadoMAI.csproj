@@ -186,6 +186,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="nitrado.ico" />
+    <None Include="Resources\marcsrvlogowhite.png" />
+    <None Include="Resources\successicon.png" />
+    <None Include="Resources\helpicon.png" />
+    <None Include="Resources\faqicon.png" />
+    <None Include="Resources\moneyicon.png" />
+    <None Include="Resources\lockicon.png" />
+    <None Include="Resources\exiticon.png" />
+    <None Include="Resources\logouttwo.png" />
+    <None Include="Resources\usericon.png" />
+    <None Include="Resources\logouticon.png" />
     <None Include="Resources\Apps-kmymoney-icon.png" />
     <None Include="Resources\webspaceicon.png" />
     <None Include="Resources\Editing-Text-Color-icon.png" />

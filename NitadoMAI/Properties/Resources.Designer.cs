@@ -63,29 +63,9 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Appssessionlogouticon {
-            get {
-                object obj = ResourceManager.GetObject("Appssessionlogouticon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap deleteicon {
             get {
                 object obj = ResourceManager.GetObject("deleteicon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap editing {
-            get {
-                object obj = ResourceManager.GetObject("editing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +83,9 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fourandfour {
+        internal static System.Drawing.Bitmap faqicon {
             get {
-                object obj = ResourceManager.GetObject("fourandfour", resourceCulture);
+                object obj = ResourceManager.GetObject("faqicon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,19 +123,9 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap marcsrv_logo_white {
+        internal static System.Drawing.Bitmap logouttwo {
             get {
-                object obj = ResourceManager.GetObject("marcsrv_logo_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap marcsrv_logo_white1 {
-            get {
-                object obj = ResourceManager.GetObject("marcsrv_logo_white1", resourceCulture);
+                object obj = ResourceManager.GetObject("logouttwo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +136,16 @@ namespace NitadoMAI.Properties {
         internal static System.Drawing.Bitmap marcsrvicon {
             get {
                 object obj = ResourceManager.GetObject("marcsrvicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap marcsrvlogowhite {
+            get {
+                object obj = ResourceManager.GetObject("marcsrvlogowhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +173,19 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nitradologo {
+        internal static System.Drawing.Bitmap Nitradobig {
             get {
-                object obj = ResourceManager.GetObject("nitradologo", resourceCulture);
+                object obj = ResourceManager.GetObject("Nitradobig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notfound {
+            get {
+                object obj = ResourceManager.GetObject("notfound", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,16 +196,6 @@ namespace NitadoMAI.Properties {
         internal static System.Drawing.Bitmap plusicon {
             get {
                 object obj = ResourceManager.GetObject("plusicon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap questionfaq {
-            get {
-                object obj = ResourceManager.GetObject("questionfaq", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,16 +223,6 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap servericon1 {
-            get {
-                object obj = ResourceManager.GetObject("servericon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Settingsicon {
             get {
                 object obj = ResourceManager.GetObject("Settingsicon", resourceCulture);
@@ -273,16 +243,6 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap squaresloading {
-            get {
-                object obj = ResourceManager.GetObject("squaresloading", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap successicon {
             get {
                 object obj = ResourceManager.GetObject("successicon", resourceCulture);
@@ -293,39 +253,9 @@ namespace NitadoMAI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap unknownuser {
-            get {
-                object obj = ResourceManager.GetObject("unknownuser", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap usericon {
             get {
                 object obj = ResourceManager.GetObject("usericon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap usericonagain {
-            get {
-                object obj = ResourceManager.GetObject("usericonagain", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap webspaceicon {
-            get {
-                object obj = ResourceManager.GetObject("webspaceicon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

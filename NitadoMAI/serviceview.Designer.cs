@@ -436,7 +436,7 @@
             // serverimage
             // 
             this.serverimage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("serverimage.ErrorImage")));
-            this.serverimage.InitialImage = global::NitadoMAI.Properties.Resources.squaresloading;
+            this.serverimage.InitialImage = global::NitadoMAI.Properties.Resources.squares;
             this.serverimage.Location = new System.Drawing.Point(8, 6);
             this.serverimage.Name = "serverimage";
             this.serverimage.Size = new System.Drawing.Size(150, 150);
@@ -446,7 +446,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::NitadoMAI.Properties.Resources.fourandfour;
+            this.pictureBox1.Image = global::NitadoMAI.Properties.Resources.notfound;
             this.pictureBox1.Location = new System.Drawing.Point(3, 54);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(999, 471);
@@ -557,7 +557,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::NitadoMAI.Properties.Resources.fourandfour;
+            this.pictureBox2.Image = global::NitadoMAI.Properties.Resources.notfound;
             this.pictureBox2.Location = new System.Drawing.Point(176, 105);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(630, 352);
@@ -567,7 +567,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::NitadoMAI.Properties.Resources.fourandfour;
+            this.pictureBox3.Image = global::NitadoMAI.Properties.Resources.notfound;
             this.pictureBox3.Location = new System.Drawing.Point(183, 109);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(630, 352);
@@ -577,7 +577,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::NitadoMAI.Properties.Resources.fourandfour;
+            this.pictureBox4.Image = global::NitadoMAI.Properties.Resources.notfound;
             this.pictureBox4.Location = new System.Drawing.Point(183, 97);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(630, 352);

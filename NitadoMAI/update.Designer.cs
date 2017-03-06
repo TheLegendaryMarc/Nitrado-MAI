@@ -48,7 +48,7 @@
             // 
             // labelupdateworker
             // 
-            this.labelupdateworker.Image = global::NitadoMAI.Properties.Resources.deleteicon;
+            
             this.labelupdateworker.Name = "labelupdateworker";
             this.labelupdateworker.Size = new System.Drawing.Size(90, 17);
             this.labelupdateworker.Text = "%WORKER%";

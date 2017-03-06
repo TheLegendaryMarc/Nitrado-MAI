@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Gameserver", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Voiceserver", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Webspace", System.Windows.Forms.HorizontalAlignment.Left);
@@ -37,18 +36,16 @@
             System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("CMS", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Bouncer", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("Clanpage", System.Windows.Forms.HorizontalAlignment.Left);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.mainworker = new System.ComponentModel.BackgroundWorker();
             this.tardis = new System.Windows.Forms.Timer(this.components);
             this.statusstrip = new System.Windows.Forms.StatusStrip();
-            this.labelworker = new System.Windows.Forms.ToolStripStatusLabel();
             this.labelusername = new System.Windows.Forms.Label();
             this.labelrealname = new System.Windows.Forms.Label();
             this.labeluserid = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelcredit = new System.Windows.Forms.Label();
-            this.btnrefresh = new System.Windows.Forms.Button();
             this.labelregistered = new System.Windows.Forms.Label();
-            this.picavatar = new System.Windows.Forms.PictureBox();
             this.listservices = new System.Windows.Forms.ListView();
             this.serviceiconlist = new System.Windows.Forms.ImageList(this.components);
             this.notify = new System.Windows.Forms.NotifyIcon(this.components);
@@ -72,11 +69,14 @@
             this.hilfeFürMAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutbutton = new System.Windows.Forms.ToolStripButton();
+            this.btnrefresh = new System.Windows.Forms.Button();
+            this.picavatar = new System.Windows.Forms.PictureBox();
+            this.labelworker = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusstrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picavatar)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picavatar)).BeginInit();
             this.SuspendLayout();
             // 
             // mainworker
@@ -93,12 +93,6 @@
             this.statusstrip.Size = new System.Drawing.Size(926, 22);
             this.statusstrip.TabIndex = 0;
             this.statusstrip.Text = "statusStrip1";
-            // 
-            // labelworker
-            // 
-            this.labelworker.Name = "labelworker";
-            this.labelworker.Size = new System.Drawing.Size(192, 17);
-            this.labelworker.Text = "%STATUSBACKGROUNDWORKER%";
             // 
             // labelusername
             // 
@@ -157,17 +151,6 @@
             this.labelcredit.TabIndex = 10;
             this.labelcredit.Text = "%CREDIT%";
             // 
-            // btnrefresh
-            // 
-            this.btnrefresh.Image = global::NitadoMAI.Properties.Resources.refreshicon;
-            this.btnrefresh.Location = new System.Drawing.Point(859, 137);
-            this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(37, 37);
-            this.btnrefresh.TabIndex = 3;
-            this.btnrefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnrefresh.UseVisualStyleBackColor = true;
-            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
-            // 
             // labelregistered
             // 
             this.labelregistered.AutoSize = true;
@@ -177,17 +160,6 @@
             this.labelregistered.Size = new System.Drawing.Size(120, 16);
             this.labelregistered.TabIndex = 8;
             this.labelregistered.Text = "%REGISTERED%";
-            // 
-            // picavatar
-            // 
-            this.picavatar.ErrorImage = global::NitadoMAI.Properties.Resources.unknownuser;
-            this.picavatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picavatar.InitialImage")));
-            this.picavatar.Location = new System.Drawing.Point(13, 16);
-            this.picavatar.Name = "picavatar";
-            this.picavatar.Size = new System.Drawing.Size(150, 150);
-            this.picavatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picavatar.TabIndex = 4;
-            this.picavatar.TabStop = false;
             // 
             // listservices
             // 
@@ -268,7 +240,7 @@
             this.mainmenubutton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.einstellungenToolStripMenuItem,
             this.beendenToolStripMenuItem});
-            this.mainmenubutton.Image = global::NitadoMAI.Properties.Resources.nitrado;
+            this.mainmenubutton.Image = ((System.Drawing.Image)(resources.GetObject("mainmenubutton.Image")));
             this.mainmenubutton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.mainmenubutton.Name = "mainmenubutton";
             this.mainmenubutton.Size = new System.Drawing.Size(58, 22);
@@ -276,7 +248,7 @@
             // 
             // einstellungenToolStripMenuItem
             // 
-            this.einstellungenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.Settingsicon;
+            this.einstellungenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("einstellungenToolStripMenuItem.Image")));
             this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
             this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.einstellungenToolStripMenuItem.Text = "Einstellungen";
@@ -284,7 +256,7 @@
             // 
             // beendenToolStripMenuItem
             // 
-            this.beendenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.exiticon;
+            this.beendenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("beendenToolStripMenuItem.Image")));
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
             this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
@@ -295,7 +267,7 @@
             this.servicetoolstrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.serviceBestellenToolStripMenuItem,
             this.aLLSERICESNAToolStripMenuItem});
-            this.servicetoolstrip.Image = global::NitadoMAI.Properties.Resources.servericon;
+            this.servicetoolstrip.Image = ((System.Drawing.Image)(resources.GetObject("servicetoolstrip.Image")));
             this.servicetoolstrip.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.servicetoolstrip.Name = "servicetoolstrip";
             this.servicetoolstrip.Size = new System.Drawing.Size(73, 22);
@@ -303,7 +275,7 @@
             // 
             // serviceBestellenToolStripMenuItem
             // 
-            this.serviceBestellenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.webspaceicon;
+            this.serviceBestellenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("serviceBestellenToolStripMenuItem.Image")));
             this.serviceBestellenToolStripMenuItem.Name = "serviceBestellenToolStripMenuItem";
             this.serviceBestellenToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.serviceBestellenToolStripMenuItem.Text = "Service bestellen";
@@ -323,7 +295,7 @@
             this.verschlüsselungToolStripMenuItem,
             this.accountToolStripMenuItem,
             this.logoutToolStripMenuItem});
-            this.toolStripDropDownButton2.Image = global::NitadoMAI.Properties.Resources.usericon;
+            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
             this.toolStripDropDownButton2.Size = new System.Drawing.Size(81, 22);
@@ -331,7 +303,7 @@
             // 
             // accessTokenToolStripMenuItem
             // 
-            this.accessTokenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.editing;
+            this.accessTokenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("accessTokenToolStripMenuItem.Image")));
             this.accessTokenToolStripMenuItem.Name = "accessTokenToolStripMenuItem";
             this.accessTokenToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.accessTokenToolStripMenuItem.Text = "AccessToken";
@@ -339,7 +311,7 @@
             // 
             // guthabenAufladenToolStripMenuItem
             // 
-            this.guthabenAufladenToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.moneyicon;
+            this.guthabenAufladenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("guthabenAufladenToolStripMenuItem.Image")));
             this.guthabenAufladenToolStripMenuItem.Name = "guthabenAufladenToolStripMenuItem";
             this.guthabenAufladenToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.guthabenAufladenToolStripMenuItem.Text = "Guthaben aufladen";
@@ -348,14 +320,13 @@
             // verschlüsselungToolStripMenuItem
             // 
             this.verschlüsselungToolStripMenuItem.Enabled = false;
-            this.verschlüsselungToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.lockicon;
             this.verschlüsselungToolStripMenuItem.Name = "verschlüsselungToolStripMenuItem";
             this.verschlüsselungToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.verschlüsselungToolStripMenuItem.Text = "Verschlüsselung";
             // 
             // accountToolStripMenuItem
             // 
-            this.accountToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.usericon;
+            this.accountToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("accountToolStripMenuItem.Image")));
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
             this.accountToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.accountToolStripMenuItem.Text = "Account";
@@ -363,7 +334,7 @@
             // 
             // logoutToolStripMenuItem
             // 
-            this.logoutToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.logouticon;
+            this.logoutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("logoutToolStripMenuItem.Image")));
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
@@ -376,7 +347,7 @@
             this.hilfeAufNitradonetToolStripMenuItem,
             this.hilfeFürMAIToolStripMenuItem,
             this.infoToolStripMenuItem});
-            this.toolStripDropDownButton3.Image = global::NitadoMAI.Properties.Resources.questionfaq;
+            this.toolStripDropDownButton3.Image = global::NitadoMAI.Properties.Resources.faqicon;
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
             this.toolStripDropDownButton3.Size = new System.Drawing.Size(61, 22);
@@ -384,6 +355,7 @@
             // 
             // supportCenterToolStripMenuItem
             // 
+            this.supportCenterToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("supportCenterToolStripMenuItem.Image")));
             this.supportCenterToolStripMenuItem.Name = "supportCenterToolStripMenuItem";
             this.supportCenterToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.supportCenterToolStripMenuItem.Text = "Support Center";
@@ -405,6 +377,7 @@
             // 
             // infoToolStripMenuItem
             // 
+            this.infoToolStripMenuItem.Image = global::NitadoMAI.Properties.Resources.marcsrvicon;
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.infoToolStripMenuItem.Text = "Info";
@@ -413,12 +386,40 @@
             // logoutbutton
             // 
             this.logoutbutton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.logoutbutton.Image = global::NitadoMAI.Properties.Resources.logouticon;
+            this.logoutbutton.Image = ((System.Drawing.Image)(resources.GetObject("logoutbutton.Image")));
             this.logoutbutton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.logoutbutton.Name = "logoutbutton";
             this.logoutbutton.Size = new System.Drawing.Size(65, 22);
             this.logoutbutton.Text = "Logout";
             this.logoutbutton.Click += new System.EventHandler(this.logoutbutton_Click);
+            // 
+            // btnrefresh
+            // 
+            this.btnrefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnrefresh.Image")));
+            this.btnrefresh.Location = new System.Drawing.Point(859, 137);
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(37, 37);
+            this.btnrefresh.TabIndex = 3;
+            this.btnrefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnrefresh.UseVisualStyleBackColor = true;
+            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
+            // 
+            // picavatar
+            // 
+            this.picavatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picavatar.InitialImage")));
+            this.picavatar.Location = new System.Drawing.Point(13, 16);
+            this.picavatar.Name = "picavatar";
+            this.picavatar.Size = new System.Drawing.Size(150, 150);
+            this.picavatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picavatar.TabIndex = 4;
+            this.picavatar.TabStop = false;
+            // 
+            // labelworker
+            // 
+            this.labelworker.Image = ((System.Drawing.Image)(resources.GetObject("labelworker.Image")));
+            this.labelworker.Name = "labelworker";
+            this.labelworker.Size = new System.Drawing.Size(208, 16);
+            this.labelworker.Text = "%STATUSBACKGROUNDWORKER%";
             // 
             // main
             // 
@@ -440,10 +441,10 @@
             this.statusstrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picavatar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picavatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
