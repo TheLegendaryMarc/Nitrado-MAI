@@ -8,5 +8,6 @@ namespace NitradoMAI
 {
     class nitrapi
     {
+        
     }
 }
