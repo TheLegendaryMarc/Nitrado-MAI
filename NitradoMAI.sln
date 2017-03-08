@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NitradoMAI", "NitradoMAI\NitradoMAI.csproj", "{DEEEB8AD-3C83-4CCD-B4D4-20A1552DE65B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NitradoMAI", "NitradoMAI\NitradoMAI.csproj", "{6E370E08-4F2B-402C-8B50-4D24B6BBC7C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DEEEB8AD-3C83-4CCD-B4D4-20A1552DE65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DEEEB8AD-3C83-4CCD-B4D4-20A1552DE65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DEEEB8AD-3C83-4CCD-B4D4-20A1552DE65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DEEEB8AD-3C83-4CCD-B4D4-20A1552DE65B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E370E08-4F2B-402C-8B50-4D24B6BBC7C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E370E08-4F2B-402C-8B50-4D24B6BBC7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E370E08-4F2B-402C-8B50-4D24B6BBC7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E370E08-4F2B-402C-8B50-4D24B6BBC7C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
