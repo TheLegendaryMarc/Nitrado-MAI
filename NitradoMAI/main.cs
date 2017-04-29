@@ -16,5 +16,10 @@ namespace NitradoMAI
         {
             InitializeComponent();
         }
+
+        private void main_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.nitrado_icon;
+        }
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E370E08-4F2B-402C-8B50-4D24B6BBC7C8}</ProjectGuid>
+    <ProjectGuid>{CF8F5469-55CA-4F85-BC42-000C4FC89013}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>NitradoMAI</RootNamespace>
     <AssemblyName>NitradoMAI</AssemblyName>
@@ -64,6 +64,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -77,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nitrado_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nitrado_loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
