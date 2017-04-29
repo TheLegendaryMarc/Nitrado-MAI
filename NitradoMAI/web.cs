@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace NitradoMAI
 {
-    public partial class main : Form
+    public partial class web : Form
     {
-        public main()
+        public web()
         {
             InitializeComponent();
-        }
-
-        private void main_Load(object sender, EventArgs e)
-        {
-           
         }
     }
 }
