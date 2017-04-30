@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace NitradoMAI
         
        //Nitrado API
 
-        public nitrapi(string url, string method)
+        public Array Nitrapi(string url, string method)
         {
             string apiEndpoint = "https://api.nitrado.net/";
             string RequestUrl = apiEndpoint + url;
@@ -41,6 +42,16 @@ namespace NitradoMAI
             {
                 
             }
+            dynamic dataresponse = JsonConvert.DeserializeObject(jsonesponse);
+            return dataresponse;
+        }
+
+        //TestCase
+
+        public string testapi()
+        {
+            Array data = Nitrapi("user", "get");
+            return "test";
         }
 
         // Encryption

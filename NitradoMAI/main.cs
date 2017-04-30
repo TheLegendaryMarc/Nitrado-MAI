@@ -21,5 +21,12 @@ namespace NitradoMAI
         {
            
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            nitrapi nitradoapi = new nitrapi();
+
+            nitradoapi.testapi();
+        }
     }
 }
