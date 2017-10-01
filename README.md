@@ -31,7 +31,7 @@ Beim ersten Programmstart wird sich das Loginfenster dort meldest du dich mit de
 
 Nach dem Login siehst du nun das Hauptfenster in diesem werden dir deine Services aufgelistet und Accountinformationen angezeigt. Durch einen Doppelklick auf dein gewünschten Service öffnet sich die Serviceübersicht. Du kannst so viele Serviceübersichten öffnen wie du willst.
 
-####Logout
+#### Logout
 
 Einmal eingeloggt bleibst du das auch bis du dich ausloggst unter **Einstellungen** -> **Logout** oder bis du über die Nitrado.net Website den Zugriff enziehst.
 
